@@ -123,7 +123,7 @@ export default function RomanticRed(): JSX.Element {
             <div css={tw`absolute left-0 top[40%] width[150%] sm:top[10%] md:width[100%] z-index[0]`}>
               <img src="./assets/templates/romanticred/twig.svg" alt="Coundown Shape" />
             </div>
-            <div tw="flex flex-col width[100%] md:(flex-row width[80%]) items-center justify-center relative pt-14 h-full text-center mx-auto">
+            <div tw="flex flex-col width[100%] md:(flex-row width[80%]) items-center justify-center relative padding-top[64px] h-full text-center mx-auto">
               <div tw="flex-1">
                 <DateDetail
                   title="Akad Nikah"
@@ -150,7 +150,7 @@ export default function RomanticRed(): JSX.Element {
             <div css={tw`absolute -top-14 right-0 width[30%] md:width[20%] z-index[0]`}>
               <img src="./assets/templates/romanticred/rose-white.svg" alt="Left Shape" />
             </div>
-            <div tw="relative text-center pt-10 pb-14">
+            <div tw="relative text-center padding-top[64px] pb-14">
               <TitleLine>Gallery</TitleLine>
               <div css={styles.photoGallery}>
                 <Gallery images={[
@@ -182,7 +182,7 @@ export default function RomanticRed(): JSX.Element {
 
           {/* Guest Book */}
           <div id="guestbook" css={styles.guestBook}>
-            <div tw="text-center py-10 text-white">
+            <div tw="text-center pb-10 text-white padding-top[64px]">
               <TitleLine>Guest Book</TitleLine>
               <div tw="width[400px] mx-auto my-10">
                 <form>

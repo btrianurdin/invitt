@@ -90,8 +90,8 @@ const styles = {
     font-family: "Poppins", Arial;
     position: relative;
     & div.greetings-content {
-      ${tw`text-center py-16 px-10 text-white width[100%] sm:width[80%] lg:width[70%] 
-      font-medium mx-auto font-size[28px] md:font-size[32px]`}
+      ${tw`text-center px-10 text-white width[100%] sm:width[80%] lg:width[70%] 
+      font-medium mx-auto font-size[28px] md:font-size[32px] padding-top[64px] padding-bottom[64px]`}
     }
   `,
   guestBook: css`
