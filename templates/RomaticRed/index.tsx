@@ -105,7 +105,7 @@ export default function RomanticRed(): JSX.Element {
           </div>
 
           {/* COUNTDOWN */}
-          <div tw="background-color[#FF6675] relative">
+          <div id="countdown" tw="background-color[#FF6675] relative">
             <CountdownShape />
             <div css={styles.countdownContent}>
               <Countdown value={10} unit="DAY" />
@@ -116,7 +116,7 @@ export default function RomanticRed(): JSX.Element {
           </div>
 
           {/* DATE */}
-          <div css={styles.dateSection}>
+          <div id="date" css={styles.dateSection}>
             <div css={tw`absolute top-10 left-6 width[40%] md:width[20%] z-index[0]`}>
               <img src="./assets/templates/romanticred/rose-white.svg" alt="Left Shape" />
             </div>
@@ -146,7 +146,7 @@ export default function RomanticRed(): JSX.Element {
           </div>
 
           {/* Gallery */}
-          <div css={styles.gallerySection}>
+          <div id="gallery" css={styles.gallerySection}>
             <div css={tw`absolute -top-14 right-0 width[30%] md:width[20%] z-index[0]`}>
               <img src="./assets/templates/romanticred/rose-white.svg" alt="Left Shape" />
             </div>
@@ -167,7 +167,7 @@ export default function RomanticRed(): JSX.Element {
           </div>
 
           {/* Greetings */}
-          <div css={styles.greetings}>
+          <div id="greetings" css={styles.greetings}>
             <div css={tw`absolute top-0 right-0 flex justify-end z-index[0]`}>
               <img src="./assets/templates/romanticred/greeting-shape-right.svg" tw="width[60%] md:width[85%]" alt="Right Shape" />
             </div>
@@ -181,7 +181,7 @@ export default function RomanticRed(): JSX.Element {
           </div>
 
           {/* Guest Book */}
-          <div css={styles.guestBook}>
+          <div id="guestbook" css={styles.guestBook}>
             <div tw="text-center py-10 text-white">
               <TitleLine>Guest Book</TitleLine>
               <div tw="width[400px] mx-auto my-10">
