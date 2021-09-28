@@ -154,12 +154,12 @@ export default function RomanticRed(): JSX.Element {
               <TitleLine>Gallery</TitleLine>
               <div css={styles.photoGallery}>
                 <Gallery images={[
-                  './assets/templates/romanticred/wedding-1.jpg',
-                  './assets/templates/romanticred/wedding-2.jpg',
-                  './assets/templates/romanticred/wedding-3.png',
-                  './assets/templates/romanticred/wedding-1.jpg',
-                  './assets/templates/romanticred/wedding-2.jpg',
-                  './assets/templates/romanticred/wedding-3.png',
+                  './assets/images/wedding-1.jpg',
+                  './assets/images/wedding-2.jpg',
+                  './assets/images/wedding-3.png',
+                  './assets/images/wedding-4.jpg',
+                  './assets/images/wedding-5.jpg',
+                  './assets/images/wedding-6.jpg',
                 ]}
                 />
               </div>

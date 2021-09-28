@@ -17,7 +17,6 @@ export default function Select(props: InputProps): JSX.Element {
     <div tw="text-left font-family['Poppins'] my-3">
       <label htmlFor={id} css={styles.label}>{label}</label>
       <select {...props} id={id} css={styles.select}>
-        <option disabled selected>Pilih Kehadiran</option>
         <option value="yes">Hadir</option>
         <option value="no">Tidak Hadir</option>
       </select>
