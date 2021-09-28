@@ -47,25 +47,25 @@ export default function Navbar(): JSX.Element {
         <h1 css={tw`hidden md:block`}>A&S</h1>
         <ul>
           <li>
-            <Link to="">
+            <Link to="gallery">
               <span><FiImage tw="h-6 w-6" /></span>
               Gallery
             </Link>
           </li>
           <li>
-            <Link to="">
+            <Link to="date">
               <span><FiCalendar tw="h-6 w-6" /></span>
               Date
             </Link>
           </li>
           <li>
-            <Link to="">
+            <Link to="greetings">
               <span><FiMessageSquare tw="h-6 w-6" /></span>
-              Messages
+              Greeting
             </Link>
           </li>
           <li>
-            <Link to="">
+            <Link to="guestbook">
               <span><FiBook tw="h-6 w-6" /></span>
               Guest Book
             </Link>
