@@ -16,7 +16,7 @@ const styles = {
       }
       & > ul {
         ${tw`flex width[100%] md:width[60%] lg:width[55%] justify-between items-center`}
-        & li {
+        & a {
           ${tw`px-1.5 pt-1 cursor-pointer rounded-md transition-colors duration-200 ease-linear text-xs font-light md:(px-4 py-2 text-base font-medium)`}
           &:hover {
             background-color: #e95362;
