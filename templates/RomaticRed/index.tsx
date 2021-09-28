@@ -56,6 +56,7 @@ export default function RomanticRed(): JSX.Element {
         <div id="content" css={tw`relative`}>
 
           {/* NAVBAR */}
+          <Navbar />
           {/* <Navbar /> */}
 
           {/* SECTION 2 (INTRODUCE) */}
