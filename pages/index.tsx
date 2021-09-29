@@ -1,8 +1,8 @@
 import type { NextPage } from 'next';
-import RomanticRed from '../templates/RomaticRed';
+import GreenLove from '../templates/GreenLove';
 
 const Home: NextPage = () => (
-  <RomanticRed />
+  <GreenLove />
 );
 
 export default Home;

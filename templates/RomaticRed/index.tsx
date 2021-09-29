@@ -4,13 +4,13 @@ import { Link } from 'react-scroll';
 import SimpleReactLightbox from 'simple-react-lightbox';
 import styles, { Button, TitleLine } from './styles';
 import Navbar from './components/Navbar';
-import { HeroShape, CountdownShape, IntroduceShape } from './components/Shape';
+import { HeroShape, CountdownShape, IntroduceShape } from './components/shapes';
 import Countdown from './components/Countdown';
 import DateDetail from './components/DateDetail';
 import Gallery from './components/Gallery';
-import Input from './components/Atoms/Input';
-import Select from './components/Atoms/Select';
-import TextArea from './components/Atoms/TextArea';
+import Input from './components/atoms/Input';
+import Select from './components/atoms/Select';
+import TextArea from './components/atoms/TextArea';
 
 export default function RomanticRed(): JSX.Element {
   return (
