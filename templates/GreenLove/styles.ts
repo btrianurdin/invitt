@@ -66,6 +66,43 @@ const styles = {
     );
     ${tw`relative text-white font-family['Poppins']`}
   `,
+  datePage: css`
+    background-image: url("./assets/templates/greenlove/date-bg.svg");
+    ${tw`bg-cover lg:(h-screen flex items-center) bg-center min-h-screen overflow-hidden`}
+  `,
+  galleryPage: css`
+    background: rgb(57, 62, 70);
+    background: linear-gradient(
+      90deg,
+      rgba(57, 62, 70, 1) 0%,
+      rgba(46, 184, 191, 1) 100%
+    );
+    ${tw`min-h-screen text-white`}
+  `,
+  photoGallery: css`
+    & div {
+      ${tw`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-10 content-center my-12 mx-auto`}
+      & a {
+        ${tw`max-height[300px] overflow-hidden `}
+        & img {
+          ${tw`mx-auto w-full object-cover h-full`}
+        }
+      }
+    }
+  `,
+  greeting: css`
+    ${tw`background-color[#2EB8BF] relative text-center text-white font-family['Poppins']`}
+  `,
+  guestBook: css`
+    background: rgb(57, 62, 70);
+    background: linear-gradient(
+      270deg,
+      rgba(57, 62, 70, 1) 0%,
+      rgba(46, 184, 191, 1) 100%
+    );
+    ${tw`min-h-screen relative text-white font-family['Poppins']`}
+  `,
+  credit: tw`background-color[#00ADB5] font-family['Poppins'] color[#fff] pt-10 pb-16`,
 };
 
 export const Button = styled.button`
@@ -74,6 +111,16 @@ export const Button = styled.button`
   ${tw`py-1.5 px-8 rounded-full font-thin`}
   &:hover {
     background-color: #40cad1;
+  }
+`;
+
+export const TitleLine = styled.h1`
+  ${tw`font-size[38px] md:font-size[42px] font-family['Italiana'] relative inline-block z-index[20]`}
+  &:before {
+    border-bottom: 1px solid white;
+    left: 0;
+    right: 0;
+    ${tw`content absolute width[50%] height[100%] mx-auto z-index[-1]`}
   }
 `;
 
