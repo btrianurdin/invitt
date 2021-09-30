@@ -170,7 +170,7 @@ export default function GreenLove(): JSX.Element {
           <div css={styles.guestBook}>
             <div tw="text-center py-10">
               <TitleLine>Guest Book</TitleLine>
-              <div tw="width[400px] mx-auto my-14">
+              <div tw="width[90%] sm:width[400px] mx-auto my-14">
                 <form>
                   <div tw="my-6">
                     <Input label="Nama Tamu" placeholder="Masukkan nama Anda" tw="focus:border-color[#00ADB5]" />
@@ -192,7 +192,7 @@ export default function GreenLove(): JSX.Element {
             <div tw="width[100px] mx-auto">
               <p tw="font-size[14px] md:font-size[16px]">created in</p>
               <a href="#">
-                <LogoInvitt fill="#fff" />
+                <LogoInvitt fill="#fff" tw="width[100px] md:width[133px]" />
               </a>
             </div>
           </div>
