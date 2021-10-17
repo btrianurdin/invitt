@@ -32,6 +32,7 @@
     "react/react-in-jsx-scope": "off",
     "react/jsx-props-no-spreading": "off",
     "no-use-before-define": "off",
+    "no-underscore-dangle": "off",
     "import/no-extraneous-dependencies": "off",
     "@next/next/no-img-element": "off",
     "@typescript-eslint/no-use-before-define": [
