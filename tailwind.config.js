@@ -1,14 +1,7 @@
 module.exports = {
   purge: [],
   darkMode: false, // or 'media' or 'class'
-  theme: {
-    extend: {
-      fontFamily: {
-        dancing: ['Dancing Script', 'cursive'],
-        poppins: ['Poppins', 'sans-serif'],
-      },
-    },
-  },
+  theme: {},
   variants: {
     extend: {},
   },

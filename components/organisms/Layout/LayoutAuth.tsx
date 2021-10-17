@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import tw from 'twin.macro';
 import { AuthProvider } from '../../../context/AuthContext';
 
 interface LayoutAuthProps {
@@ -8,7 +9,9 @@ interface LayoutAuthProps {
 export default function LayoutAuth({ children }: LayoutAuthProps): JSX.Element {
   return (
     <AuthProvider>
-      {children}
+      <div css={tw`container`}>
+        {children}
+      </div>
     </AuthProvider>
   );
 }
