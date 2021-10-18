@@ -1,17 +1,22 @@
 import tw, { css } from 'twin.macro';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import { useAuthContext } from '../../../context/AuthContext';
 import LogoInvitt from '../../atoms/LogoInvitt';
 import navbars from '../../../constants/navbars';
+import Button from '../../atoms/Button';
 
 const styles = {
   navUl: css`
     ${tw`flex`}
     & li{
       ${tw`p-4`}
+      & a:hover{
+        ${tw`cursor-pointer text-gray-600`}
+      }
     }
   `,
-  navActive: tw`color[#F037A5]`,
+  navActive: tw`color[#F037A5] hover:color[#F037A5]!`,
 };
 
 export default function Header(): JSX.Element {
@@ -19,10 +24,10 @@ export default function Header(): JSX.Element {
   const router = useRouter();
 
   return (
-    <div css={tw`flex container mx-auto p-3 items-center font-family["Poppins"]`}>
+    <div css={tw`flex container mx-auto p-3 items-center justify-between font-family["Poppins"]`}>
       <div tw="flex items-center">
         <div tw="md:mr-4">
-          <LogoInvitt fill="#F037A5" tw="h-7 -ml-5" />
+          <LogoInvitt fill="#F037A5" tw="h-8 -ml-3" />
         </div>
         {
           isLogin && (
@@ -30,9 +35,11 @@ export default function Header(): JSX.Element {
             {
               navbars.map((navbar) => (
                 <li key={navbar.name}>
-                  <a href={navbar.path} css={router.pathname === navbar.path ? styles.navActive : ''}>
-                    {navbar.name}
-                  </a>
+                  <Link href={navbar.path}>
+                    <a css={router.pathname === navbar.path ? styles.navActive : ''}>
+                      {navbar.name}
+                    </a>
+                  </Link>
                 </li>
               ))
             }
@@ -41,7 +48,17 @@ export default function Header(): JSX.Element {
         }
       </div>
       <div>
-        123
+        {
+          isLogin
+            ? (
+              <Button text="Logout" color="pink" />
+            ) : (
+              <>
+                <Button text="Sign In" color="pink" outline tw="mr-5" />
+                <Button text="Sign Up" color="pink" />
+              </>
+            )
+        }
       </div>
     </div>
   );
