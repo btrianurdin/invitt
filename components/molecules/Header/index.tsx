@@ -24,7 +24,7 @@ export default function Header(): JSX.Element {
   const router = useRouter();
 
   return (
-    <div css={tw`flex container mx-auto p-3 items-center justify-between font-family["Poppins"]`}>
+    <div css={tw`relative z-index[2] flex container mx-auto p-3 items-center justify-between font-family["Poppins"]`}>
       <div tw="flex items-center">
         <div tw="md:mr-4">
           <LogoInvitt fill="#F037A5" tw="h-8 -ml-3" />
@@ -54,8 +54,8 @@ export default function Header(): JSX.Element {
               <Button text="Logout" color="pink" />
             ) : (
               <>
-                <Button text="Sign In" color="pink" outline tw="mr-5" />
-                <Button text="Sign Up" color="pink" />
+                <Button text="Sign In" color="pink" outline tw="mr-5" onClick={() => router.push('/auth/sign-in')} />
+                <Button text="Sign Up" color="pink" onClick={() => router.push('/auth/sign-up')} />
               </>
             )
         }

@@ -1,4 +1,4 @@
-import { HTMLAttributes, HTMLProps } from 'react';
+import { HTMLAttributes } from 'react';
 import tw, { css } from 'twin.macro';
 import { colorTheme } from '../../constants/commons';
 
@@ -6,6 +6,7 @@ interface ButtonProps extends HTMLAttributes<HTMLButtonElement>{
   text: string;
   color: 'default' | 'pink' | 'danger' | 'success';
   outline?: boolean;
+  typeSubmit?: boolean;
   block?: boolean;
 }
 
@@ -16,8 +17,6 @@ const btn = {
       background-color: ${(colorTheme as any)[color]};
       border: 2px solid ${(colorTheme as any)[color]};
       color: white;
-      padding: 5px 20px;
-      border-radius: 8px;
     `,
   ],
   outline: ({ color }: { color: string }) => [
@@ -26,21 +25,23 @@ const btn = {
       box-sizing: border-box;
       border: 2px solid ${(colorTheme as any)[color]};
       color: ${(colorTheme as any)[color]};
-      padding: 5px 20px;
-      border-radius: 8px;
     `,
   ],
+  commonStyle: css`
+    padding: 5px 20px;
+    border-radius: 8px;
+  `,
 };
 
 export default function Button(props: ButtonProps): JSX.Element {
   const {
-    outline = false, color, text, block = false, ...rest
+    outline = false, color, text, block = false, typeSubmit = false, ...rest
   } = props;
 
   return (
     <button
-      css={[btn[outline ? 'outline' : 'default']({ color }), block ? tw`w-full` : '']}
-      type="button"
+      css={[btn[outline ? 'outline' : 'default']({ color }), block ? tw`w-full` : '', btn.commonStyle]}
+      type={typeSubmit ? 'submit' : 'button'}
       {...rest}
     >
       {text}
@@ -51,4 +52,5 @@ export default function Button(props: ButtonProps): JSX.Element {
 Button.defaultProps = {
   outline: false,
   block: false,
+  typeSubmit: false,
 };
