@@ -7,9 +7,11 @@ export const fetcherAuth = async (url: string): Promise<any> => {
   let headers: Record<string, string> = {};
 
   if (getToken) {
+    const jwtToken = Buffer.from(getToken, 'base64').toString();
+
     headers = {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${getToken}`,
+      Authorization: `Bearer ${jwtToken}`,
     };
   }
 
