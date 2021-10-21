@@ -5,4 +5,12 @@ export const colorTheme = {
   success: '#25953E',
 };
 
+export const titleName = (relative: string): string => `
+  ${relative ? `${relative} | ` : ''} invitt - create your invitation website
+`;
+
+export const capitalize = (str: string): string => (
+  str.charAt(0).toUpperCase() + str.slice(1).toLowerCase()
+);
+
 export const test = null;

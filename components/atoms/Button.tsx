@@ -48,7 +48,6 @@ export default function Button(props: ButtonProps): JSX.Element {
     <button
       css={[btn[outline ? 'outline' : 'default']({ color }), block ? tw`w-full` : '', btn.commonStyle]}
       type={typeSubmit ? 'submit' : 'button'}
-      disabled={isLoading}
       {...rest}
     >
       {

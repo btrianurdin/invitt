@@ -9,6 +9,7 @@ import Button from '../../atoms/Button';
 import { ISignIn } from '../../../interfaces';
 import { setSignIn } from '../../../services/auth';
 import { ROUTE_HOME } from '../../../constants/api-paths';
+import { capitalize } from '../../../constants/commons';
 
 export default function SignInForm(): JSX.Element {
   const [signinData, setSigninData] = useState<ISignIn>({
@@ -28,13 +29,14 @@ export default function SignInForm(): JSX.Element {
       const res = await setSignIn(signinData);
 
       if (res.status === 'error') {
-        toast.error(res.message);
+        toast.error(capitalize(res.message));
       } else {
         const encodeToken = Buffer.from(res.token).toString('base64');
         Cookies.set('inv_token', encodeToken);
 
         router.push(ROUTE_HOME);
       }
+      setLoading(false);
     }
   };
 
@@ -57,12 +59,12 @@ export default function SignInForm(): JSX.Element {
         onChange={(e) => setSigninData({ ...signinData, password: e.target.value })}
       />
       <p css={tw`-mt-3 mb-5 font-light text-sm`}>
-        <Link href="/forgot-password">
+        <Link href="/auth/forgot-password">
           <a tw="underline cursor-pointer">forgot password</a>
         </Link>
       </p>
 
-      <Button text="Sign In" typeSubmit color="pink" block tw="px-3.5 py-2.5" isLoading={loading} />
+      <Button text="Sign In" typeSubmit color="pink" block tw="px-3.5 py-2.5" isLoading={loading} disabled={loading} />
     </form>
   );
 }
