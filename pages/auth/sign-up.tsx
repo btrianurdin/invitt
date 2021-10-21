@@ -5,7 +5,7 @@ import Button from '../../components/atoms/Button';
 import Input from '../../components/atoms/Input';
 import { LayoutAuth } from '../../components/organisms/Layout';
 import Select from '../../components/atoms/Select';
-import AuthBox from '../../components/molecules/AuthBox/AuthBox';
+import AuthBox from '../../components/molecules/AuthBox';
 
 export default function SignUp(): JSX.Element {
   return (

@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 import tw from 'twin.macro';
 import Button from '../../components/atoms/Button';
 import Input from '../../components/atoms/Input';
-import AuthBox from '../../components/molecules/AuthBox/AuthBox';
+import AuthBox from '../../components/molecules/AuthBox';
 import { LayoutAuth } from '../../components/organisms/Layout';
 import { ROUTE_SIGNIN } from '../../constants/api-paths';
 import { capitalize, titleName } from '../../constants/commons';

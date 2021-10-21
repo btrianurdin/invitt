@@ -2,8 +2,8 @@ import tw from 'twin.macro';
 import Head from 'next/head';
 import Link from 'next/link';
 import { LayoutAuth } from '../../components/organisms/Layout';
-import AuthBox from '../../components/molecules/AuthBox/AuthBox';
-import SignInForm from '../../components/molecules/SignInForm/SignInForm';
+import AuthBox from '../../components/molecules/AuthBox';
+import SignInForm from '../../components/molecules/SignInForm';
 import RoutePublic from '../../components/organisms/Route/RoutePublic';
 import { titleName } from '../../constants/commons';
 

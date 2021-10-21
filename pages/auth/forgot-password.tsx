@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { toast } from 'react-toastify';
 import Button from '../../components/atoms/Button';
 import Input from '../../components/atoms/Input';
-import AuthBox from '../../components/molecules/AuthBox/AuthBox';
+import AuthBox from '../../components/molecules/AuthBox';
 import { LayoutAuth } from '../../components/organisms/Layout';
 import RoutePublic from '../../components/organisms/Route/RoutePublic';
 import { titleName } from '../../constants/commons';
