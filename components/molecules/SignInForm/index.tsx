@@ -36,8 +36,8 @@ export default function SignInForm(): JSX.Element {
 
         router.push(ROUTE_HOME);
       }
-      setLoading(false);
     }
+    setLoading(false);
   };
 
   return (
@@ -64,7 +64,7 @@ export default function SignInForm(): JSX.Element {
         </Link>
       </p>
 
-      <Button text="Sign In" typeSubmit color="pink" block tw="px-3.5 py-2.5" isLoading={loading} disabled={loading} />
+      <Button text="Sign In" typeSubmit color="pink" block tw="px-3.5 py-2.5 mt-3" isLoading={loading} disabled={loading} />
     </form>
   );
 }

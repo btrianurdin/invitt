@@ -20,17 +20,16 @@ const styles = {
   label: tw`inline-block mb-1`,
 };
 
-export default function Input(props: InputProps): JSX.Element {
-  const {
-    label, id, isError = false, required, ...rest
-  } = props;
+export default function Input({
+  label, id, isError = false, required, ...rest
+}: InputProps): JSX.Element {
   return (
     <div tw="text-left font-family['Poppins'] my-5">
       <label htmlFor={id} css={styles.label}>
         {label}
         {required && <span tw="text-red-700">*</span>}
       </label>
-      <input {...rest} id={id} css={styles.input({ isError })} spellCheck={false} />
+      <input id={id} css={styles.input({ isError })} {...rest} />
     </div>
   );
 }

@@ -16,3 +16,16 @@ export interface IUseUser {
   isLoading: boolean;
   isError: boolean;
 }
+
+export interface ISignUp {
+  email: string;
+  fullname: string;
+  password: string;
+  gender: string;
+  phoneNumber: string;
+}
+
+export interface IRequestError {
+  status: string;
+  message: Array<string>;
+}

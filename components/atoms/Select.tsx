@@ -20,10 +20,15 @@ const styles = {
 };
 
 export default function Select(props: InputProps): JSX.Element {
-  const { label, id, children } = props;
+  const {
+    label, id, children, required,
+  } = props;
   return (
     <div tw="text-left font-family['Poppins'] my-5">
-      <label htmlFor={id} css={styles.label}>{label}</label>
+      <label htmlFor={id} css={styles.label}>
+        {label}
+        {required && <span tw="text-red-700">*</span>}
+      </label>
       <select {...props} id={id} css={styles.input}>
         {children}
       </select>
