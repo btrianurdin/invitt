@@ -1,12 +1,16 @@
 import tw, { css } from 'twin.macro';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import Cookies from 'js-cookie';
+import { useState } from 'react';
 import { useAuthContext } from '../../../context/AuthContext';
 import LogoInvitt from '../../atoms/LogoInvitt';
 import navbars from '../../../constants/navbars';
 import Button from '../../atoms/Button';
+import { ROUTE_SIGNIN } from '../../../constants/api-paths';
 
 const styles = {
+  navbarContainer: tw`relative z-index[2] flex container mx-auto p-3 items-center justify-between font-family["Poppins"]`,
   navUl: css`
     ${tw`flex`}
     & li{
@@ -22,9 +26,28 @@ const styles = {
 export default function Header(): JSX.Element {
   const { isLogin } = useAuthContext();
   const router = useRouter();
+  const [logoutLoading, setlogoutLoading] = useState(false);
+
+  const signOutHandler = () => {
+    setlogoutLoading(true);
+    const checkCookies = Cookies.get('inv_token');
+    console.log(logoutLoading);
+
+    if (checkCookies) {
+      Cookies.remove('inv_token');
+
+      setTimeout(() => {
+        if (window) {
+          window.location.assign(ROUTE_SIGNIN);
+        } else {
+          router.reload();
+        }
+      }, 500);
+    }
+  };
 
   return (
-    <div css={tw`relative z-index[2] flex container mx-auto p-3 items-center justify-between font-family["Poppins"]`}>
+    <div css={styles.navbarContainer}>
       <div tw="flex items-center">
         <div tw="md:mr-4">
           <LogoInvitt fill="#F037A5" tw="h-8 -ml-3" />
@@ -51,7 +74,13 @@ export default function Header(): JSX.Element {
         {
           isLogin
             ? (
-              <Button text="Logout" color="pink" />
+              <Button
+                text="Sign Out"
+                color="pink"
+                onClick={signOutHandler}
+                isLoading={logoutLoading}
+                disabled={logoutLoading}
+              />
             ) : (
               <>
                 <Button text="Sign In" color="pink" outline tw="mr-5" onClick={() => router.push('/auth/sign-in')} />
