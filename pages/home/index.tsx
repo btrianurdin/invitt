@@ -1,10 +1,12 @@
-import HomeContainer from '../../components/molecules/HomeContainer';
 import { LayoutAuth } from '../../components/organisms/Layout';
+import RoutePrivate from '../../components/organisms/Route/RoutePrivate';
 
 export default function Home(): JSX.Element {
   return (
     <LayoutAuth>
-      <HomeContainer />
+      <RoutePrivate>
+        ini adalah prive
+      </RoutePrivate>
     </LayoutAuth>
   );
 }
