@@ -1,9 +1,9 @@
 import { Formik } from 'formik';
-import { toast } from 'react-toastify';
+import { useRouter } from 'next/router';
 import tw from 'twin.macro';
 import * as yup from 'yup';
-import { IRequestError } from '../../../interfaces';
-import { setSignUp } from '../../../services/auth';
+import { ROUTE_COMPLETE_PROFILE } from '../../../constants/api-paths';
+import { setCookiesAuth, setSignUp } from '../../../services/auth';
 import Button from '../../atoms/Button';
 import ErrorInput from '../../atoms/ErrorInput';
 import Input from '../../atoms/Input';
@@ -18,6 +18,8 @@ const Schema = yup.object({
 });
 
 export default function SignUpForm(): JSX.Element {
+  const router = useRouter();
+
   return (
     <Formik
       initialValues={{
@@ -30,17 +32,19 @@ export default function SignUpForm(): JSX.Element {
       validationSchema={Schema}
       onSubmit={async (values, { setFieldError, setSubmitting }) => {
         setSubmitting(true);
-        const res: IRequestError = await setSignUp(values);
+        const res = await setSignUp(values);
 
         if (res.status === 'error') {
-          res.message.forEach((value) => {
+          res.message.forEach((value: string) => {
             setFieldError(
               value.substring(value.indexOf('[') + 1, value.lastIndexOf(']')),
               value.substr(value.indexOf(':') + 1),
             );
           });
         } else {
-          toast.success('Success Sign up');
+          setCookiesAuth(res.token);
+
+          router.push(ROUTE_COMPLETE_PROFILE);
         }
         setSubmitting(false);
       }}

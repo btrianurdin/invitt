@@ -27,7 +27,10 @@ export default function RoutePrivate({
     router.push(redirectPath);
   }
 
-  return <Component user={user} />;
+  if (user) {
+    return <Component user={user} />;
+  }
+  return <PageLoading w={42} h={42} />;
 }
 
 RoutePrivate.defaultProps = {

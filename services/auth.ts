@@ -1,3 +1,4 @@
+import Cookies from 'js-cookie';
 import { ISignIn, ISignUp } from '../interfaces';
 import callApi from '../configs/callApi';
 
@@ -11,6 +12,11 @@ export const setSignIn = async (data: ISignIn): Promise<any> => {
     method: 'POST',
     data,
   });
+};
+
+export const setCookiesAuth = (token: string): void => {
+  const encodeToken = Buffer.from(token).toString('base64');
+  Cookies.set('inv_token', encodeToken);
 };
 
 export const setSignUp = async (data: ISignUp): Promise<any> => {

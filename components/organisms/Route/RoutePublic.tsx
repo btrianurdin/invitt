@@ -26,7 +26,10 @@ export default function RoutePublic({
     router.push(redirectPath);
   }
 
-  return <>{children}</>;
+  if (!isLoading && !isLogin) {
+    return <>{children}</>;
+  }
+  return <PageLoading w={42} h={42} />;
 }
 
 RoutePublic.defaultProps = {

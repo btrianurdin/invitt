@@ -24,8 +24,3 @@ export interface ISignUp {
   gender: string;
   phoneNumber: string;
 }
-
-export interface IRequestError {
-  status: string;
-  message: Array<string>;
-}

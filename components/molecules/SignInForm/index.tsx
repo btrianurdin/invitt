@@ -2,12 +2,11 @@ import { useState } from 'react';
 import Link from 'next/link';
 import tw from 'twin.macro';
 import { toast } from 'react-toastify';
-import Cookies from 'js-cookie';
 import { useRouter } from 'next/router';
 import Input from '../../atoms/Input';
 import Button from '../../atoms/Button';
 import { ISignIn } from '../../../interfaces';
-import { setSignIn } from '../../../services/auth';
+import { setCookiesAuth, setSignIn } from '../../../services/auth';
 import { ROUTE_HOME } from '../../../constants/api-paths';
 import { capitalize } from '../../../constants/commons';
 
@@ -31,9 +30,7 @@ export default function SignInForm(): JSX.Element {
       if (res.status === 'error') {
         toast.error(capitalize(res.message));
       } else {
-        const encodeToken = Buffer.from(res.token).toString('base64');
-        Cookies.set('inv_token', encodeToken);
-
+        setCookiesAuth(res.token);
         router.push(ROUTE_HOME);
       }
     }

@@ -31,7 +31,6 @@ export default function Header(): JSX.Element {
   const signOutHandler = () => {
     setlogoutLoading(true);
     const checkCookies = Cookies.get('inv_token');
-    console.log(logoutLoading);
 
     if (checkCookies) {
       Cookies.remove('inv_token');
