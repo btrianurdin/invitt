@@ -1,7 +1,7 @@
 const navbars = [
   {
     name: 'Home',
-    path: '/auth/sin-in',
+    path: '/home',
   },
   {
     name: 'Templates',
