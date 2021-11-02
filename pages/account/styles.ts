@@ -30,6 +30,7 @@ const styles = {
       ${tw`block`}
     }
   `,
+  btnDisabled: tw`cursor-not-allowed`,
 };
 
 export default styles;

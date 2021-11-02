@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Button from '../../components/atoms/Button';
 import ChooseTemplate from '../../components/molecules/ChooseTemplate';
 import { LayoutAuth } from '../../components/organisms/Layout';
 import RouteRegister from '../../components/organisms/Route/RouteRegister';
@@ -25,7 +26,8 @@ export default function CompleteProfile(): JSX.Element {
             <button
               type="button"
               className={getActiveClass(2, 'active')}
-              onClick={() => setTabToggle(2)}
+              css={(!template && styles.btnDisabled)}
+              onClick={() => template && setTabToggle(2)}
             >
               Complete Profile
             </button>
@@ -35,6 +37,16 @@ export default function CompleteProfile(): JSX.Element {
             <div tw="border-b border-gray-200" />
             <div css={styles.tabContent} className={getActiveClass(1, 'active')}>
               <ChooseTemplate template={template} change={(e: any) => setTemplate(e.target.id)} />
+
+              <Button
+                text="Next"
+                color="pink"
+                block
+                tw="mt-10"
+                style={{ marginTop: '20px' }}
+                disabled={Boolean(template === null)}
+                onClick={() => setTabToggle(2)}
+              />
             </div>
             <div css={styles.tabContent} className={getActiveClass(2, 'active')}>
               Tab nomor 2
