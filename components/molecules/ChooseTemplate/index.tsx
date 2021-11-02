@@ -9,7 +9,7 @@ interface ChooseTemplateProps {
 
 export default function ChooseTemplate({ template, change }: ChooseTemplateProps): JSX.Element {
   return (
-    <div css={tw`grid grid-cols-4 gap-5`}>
+    <div css={tw`grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5`}>
       {
         templateList.map((list) => (
           <TemplateItem

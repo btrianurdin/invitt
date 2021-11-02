@@ -2,9 +2,9 @@ import tw, { css } from 'twin.macro';
 import { colorTheme } from '../../constants/commons';
 
 const styles = {
-  tab: tw`width[600px] bg-white shadow-lg mx-auto my-12 rounded-sm font-family['Poppins']`,
+  tab: tw`md:width[600px] bg-white shadow-lg mx-auto my-12 rounded-sm font-family['Poppins']`,
   tabMenu: css`
-    ${tw`w-full border-b flex`};
+    ${tw`w-full border-b flex flex-col md:flex-row`};
     & button{
       ${tw`p-5 flex-1`}
       &:hover{

@@ -16,7 +16,7 @@ export default function SignIn(): JSX.Element {
         </Head>
         <AuthBox header="Sign In">
           <SignInForm />
-          <div css={tw`mt-7 font-light flex justify-center mb-5`}>
+          <div css={tw`mt-7 font-light text-center sm:flex justify-center mb-5`}>
             <p>Don&apos;t have an account yet? </p>
             <Link href="/auth/sign-up">
               <a tw="underline cursor-pointer ml-1"> Sign Up</a>
