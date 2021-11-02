@@ -3,7 +3,7 @@ import Cookies from 'js-cookie';
 import Axios from './axios';
 
 interface ICallApi extends AxiosRequestConfig {
-  token?: string;
+  token?: boolean;
   serverToken?: string;
 }
 

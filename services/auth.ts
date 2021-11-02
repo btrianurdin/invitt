@@ -1,5 +1,5 @@
 import Cookies from 'js-cookie';
-import { ISignIn, ISignUp } from '../interfaces';
+import { ICompleteProfileData, ISignIn, ISignUp } from '../interfaces';
 import callApi from '../configs/callApi';
 
 const API_VERSION = 'api';
@@ -26,6 +26,17 @@ export const setSignUp = async (data: ISignUp): Promise<any> => {
     url,
     method: 'POST',
     data,
+  });
+};
+
+export const setCompleteProfile = async (data: ICompleteProfileData): Promise<any> => {
+  const url = `/${API_VERSION}/auth/register/completed`;
+
+  return callApi({
+    url,
+    method: 'POST',
+    data,
+    token: true,
   });
 };
 

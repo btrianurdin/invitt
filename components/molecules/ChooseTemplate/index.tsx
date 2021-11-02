@@ -3,13 +3,13 @@ import { templateList } from '../../../constants/commons';
 import TemplateItem from './TemplateItem';
 
 interface ChooseTemplateProps {
-  template: string | null;
+  template: string | undefined;
   change: (e: any) => void;
 }
 
 export default function ChooseTemplate({ template, change }: ChooseTemplateProps): JSX.Element {
   return (
-    <div css={tw`grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5`}>
+    <div css={tw`grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 my-5`}>
       {
         templateList.map((list) => (
           <TemplateItem

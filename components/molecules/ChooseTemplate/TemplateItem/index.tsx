@@ -7,7 +7,7 @@ interface TemplateItemProps extends InputHTMLAttributes<HTMLInputElement>{
   labelName: string;
   image: string;
   id: string;
-  selected: string | null;
+  selected: string | undefined;
 }
 
 const styles = {

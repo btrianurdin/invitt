@@ -5,12 +5,13 @@ import { LayoutAuth } from '../../components/organisms/Layout';
 import AuthBox from '../../components/molecules/AuthBox';
 import SignUpForm from '../../components/molecules/SignUpForm';
 import RoutePublic from '../../components/organisms/Route/RoutePublic';
+import { titleName } from '../../constants/commons';
 
 export default function SignUp(): JSX.Element {
   return (
     <LayoutAuth>
       <RoutePublic>
-        <Head><title>Sign Up | invitt - create your invitation website</title></Head>
+        <Head><title>{ titleName('Sign Up') }</title></Head>
         <AuthBox header="Sign Up">
           <SignUpForm />
 

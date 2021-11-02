@@ -1,19 +1,26 @@
+import Head from 'next/head';
 import { useState } from 'react';
+import tw from 'twin.macro';
 import Button from '../../components/atoms/Button';
 import ChooseTemplate from '../../components/molecules/ChooseTemplate';
+import CompleteProfileForm from '../../components/molecules/CompleteProfileForm';
 import { LayoutAuth } from '../../components/organisms/Layout';
 import RouteRegister from '../../components/organisms/Route/RouteRegister';
+import { titleName } from '../../constants/commons';
 import styles from './styles';
 
 export default function CompleteProfile(): JSX.Element {
   const [tabToggle, setTabToggle] = useState(1);
-  const [template, setTemplate] = useState<string | null>(null);
+  const [template, setTemplate] = useState<string | undefined>(undefined);
 
   const getActiveClass = (index: number, className: string) => (tabToggle === index ? className : '');
 
   return (
     <LayoutAuth>
       <RouteRegister>
+        <Head>
+          <title>{ titleName('Complete Profile') }</title>
+        </Head>
         <div css={styles.tab}>
           <div css={styles.tabMenu}>
             <button
@@ -42,14 +49,13 @@ export default function CompleteProfile(): JSX.Element {
                 text="Next"
                 color="pink"
                 block
-                tw="mt-10"
-                style={{ marginTop: '20px' }}
-                disabled={Boolean(template === null)}
+                css={tw`px-3.5 py-2.5 mt-3`}
+                disabled={Boolean(template === undefined)}
                 onClick={() => setTabToggle(2)}
               />
             </div>
             <div css={styles.tabContent} className={getActiveClass(2, 'active')}>
-              Tab nomor 2
+              <CompleteProfileForm templateData={template} />
             </div>
           </div>
         </div>

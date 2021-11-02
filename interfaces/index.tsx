@@ -24,3 +24,10 @@ export interface ISignUp {
   gender: string;
   phoneNumber: string;
 }
+
+export interface ICompleteProfileData {
+  web_url: string;
+  groom_fullname: string;
+  bride_fullname: string;
+  template?: string;
+}
