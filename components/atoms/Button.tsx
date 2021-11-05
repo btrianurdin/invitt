@@ -4,7 +4,7 @@ import { colorTheme } from '../../constants/commons';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
   text: string;
-  color: 'default' | 'pink' | 'danger' | 'success';
+  color: 'default' | 'pink' | 'danger' | 'success' | 'purple';
   outline?: boolean;
   typeSubmit?: boolean;
   block?: boolean;
