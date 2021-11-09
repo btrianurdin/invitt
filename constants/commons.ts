@@ -28,6 +28,6 @@ export const capitalize = (str: string): string => (
 );
 
 export const dummyImg = {
-  bridePic: 'https://res.cloudinary.com/trianurdin/image/upload/v1636082453/claire-graham-blackburn-bridal-fontaine-106_j0xqdc.jpg',
-  groomPic: 'https://res.cloudinary.com/trianurdin/image/upload/v1636082353/Eric_Kelley-Kuhl-groom_b0fkdc.jpg',
+  bride: 'https://res.cloudinary.com/trianurdin/image/upload/v1636082453/claire-graham-blackburn-bridal-fontaine-106_j0xqdc.jpg',
+  groom: 'https://res.cloudinary.com/trianurdin/image/upload/v1636082353/Eric_Kelley-Kuhl-groom_b0fkdc.jpg',
 };
