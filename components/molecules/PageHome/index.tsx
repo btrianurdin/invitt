@@ -4,12 +4,12 @@ import { useRef } from 'react';
 import { toast } from 'react-toastify';
 import Button from '../../atoms/Button';
 import ProfileArea from './ProfileArea';
-import useInvitation from '../../../hooks/useInvitation';
 import { weddingdateConvert } from '../../../services/utils';
+import { useInvitationContext } from '../../../context/InvitationContext';
 
 export default function PageHome(): JSX.Element {
   const linkRef = useRef(null);
-  const { invitation, isLoading, weddingDate } = useInvitation();
+  const { invitation, isLoading, weddingDate } = useInvitationContext();
 
   const handleCopy = () => {
     if (navigator) {
