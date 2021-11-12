@@ -27,6 +27,8 @@ export default function PageHome(): JSX.Element {
 
   useEffect(() => {
     setTimeout(() => { setEditTooltip(false); }, 5000);
+    console.log(router.basePath);
+    
   }, []);
 
   return (
@@ -70,13 +72,18 @@ export default function PageHome(): JSX.Element {
             type="text"
             name="link"
             tw="py-2 px-3 box-border w-full border border-blue-600 focus:outline-none rounded-md my-3"
-            value={isLoading ? 'loading...' : `https://invitt.com/${invitation?.web_url}`}
+            value={isLoading ? 'loading...' : `${process.env.NEXT_PUBLIC_WEB}/${invitation?.web_url}`}
             readOnly
             ref={linkRef}
           />
           <div tw="grid grid-cols-2 gap-5">
             <Button text="Copy" color="purple" onClick={handleCopy} disabled={isLoading} />
-            <Button text="Open Web" color="success" disabled={isLoading} />
+            <Button
+              text="Open Web"
+              color="success"
+              disabled={isLoading}
+              onClick={() => window && window.open((linkRef.current as any).value, '_blank')}
+            />
           </div>
         </div>
       </div>
