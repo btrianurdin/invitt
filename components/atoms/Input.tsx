@@ -13,7 +13,7 @@ const styles = {
     css`
       border: 1px solid ${isError ? colorTheme.danger : '#ababab'};
       &:focus{
-        border: 1px solid ${colorTheme.pink}
+        border: 1px solid ${isError ? colorTheme.danger : colorTheme.pink}
       }
     `,
   ],
