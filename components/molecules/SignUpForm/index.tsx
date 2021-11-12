@@ -94,7 +94,15 @@ export default function SignUpForm(): JSX.Element {
             />
             <ErrorInput formik={formik} field="phoneNumber" />
 
-            <Button text="Sign Up" color="pink" block tw="px-3.5 py-2.5 mt-3" typeSubmit isLoading={formik.isSubmitting} />
+            <Button
+              text="Sign Up"
+              color="pink"
+              block
+              tw="px-3.5 py-2.5 mt-3"
+              typeSubmit
+              isLoading={formik.isSubmitting}
+              disabled={formik.isSubmitting}
+            />
             <div css={tw`text-center`} />
           </form>
         )
