@@ -28,7 +28,7 @@ export default function PageHome(): JSX.Element {
   useEffect(() => {
     const tooltipTime = setTimeout(() => { setEditTooltip(false); }, 5000);
 
-    return clearTimeout(tooltipTime);
+    return () => clearTimeout(tooltipTime);
   }, []);
 
   return (
