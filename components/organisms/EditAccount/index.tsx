@@ -1,7 +1,9 @@
 import { Formik } from 'formik';
+import { toast } from 'react-toastify';
 import tw from 'twin.macro';
 import * as yup from 'yup';
 import { useAuthContext } from '../../../context/AuthContext';
+import { setEditAccount } from '../../../services/user';
 import Button from '../../atoms/Button';
 import ErrorInput from '../../atoms/ErrorInput';
 import Input from '../../atoms/Input';
@@ -15,7 +17,6 @@ const Schema = yup.object({
 
 export default function EditAccount(): JSX.Element {
   const { user } = useAuthContext();
-  console.log(user);
 
   return (
     <div>
@@ -29,7 +30,19 @@ export default function EditAccount(): JSX.Element {
           }}
           validationSchema={Schema}
           onSubmit={async (values, { setFieldError, setSubmitting }) => {
-            console.log('test');
+            setSubmitting(true);
+            const res = await setEditAccount(values);
+
+            if (res.status === 'error') {
+              res.message.forEach((value: string) => {
+                setFieldError(
+                  value.substring(value.indexOf('[') + 1, value.lastIndexOf(']')),
+                  value.substr(value.indexOf(':') + 1),
+                );
+              });
+            } else {
+              toast.success('Successful edit account');
+            }
           }}
         >
           {
@@ -43,6 +56,9 @@ export default function EditAccount(): JSX.Element {
                   placeholder="Your email"
                   defaultValue={user?.email}
                 />
+                <div tw="block -mt-4">
+                  <small tw="bg-yellow-400 rounded-md px-2 font-light">email tidak bisa diubah!</small>
+                </div>
 
                 <Input
                   type="text"
@@ -53,11 +69,18 @@ export default function EditAccount(): JSX.Element {
                   isError={!!formik.errors.fullname}
                 />
                 <ErrorInput formik={formik} field="fullname" />
-                <Select label="Gender" id="gender" required {...formik.getFieldProps('gender')}>
+
+                <Select
+                  label="Gender"
+                  id="gender"
+                  required
+                  {...formik.getFieldProps('gender')}
+                >
                   <option value="man">Man</option>
                   <option value="woman">Woman</option>
                 </Select>
                 <ErrorInput formik={formik} field="gender" />
+
                 <Input
                   type="text"
                   label="Phone Number"
@@ -68,7 +91,15 @@ export default function EditAccount(): JSX.Element {
                 />
                 <ErrorInput formik={formik} field="phoneNumber" />
 
-                <Button text="Edit" color="pink" block tw="px-3.5 py-2.5 mt-3" typeSubmit isLoading={formik.isSubmitting} />
+                <Button
+                  text="Save"
+                  color="pink"
+                  block
+                  tw="px-3.5 py-2.5 mt-3"
+                  typeSubmit
+                  isLoading={formik.isSubmitting}
+                  disabled={formik.isSubmitting}
+                />
               </form>
             )
           }
