@@ -1,15 +1,22 @@
 import tw from 'twin.macro';
-import { FiCalendar, FiMapPin } from 'react-icons/fi';
-import { useRef } from 'react';
+import {
+  FiCalendar, FiMapPin, FiSettings,
+} from 'react-icons/fi';
+import { useEffect, useRef, useState } from 'react';
 import { toast } from 'react-toastify';
+import { useRouter } from 'next/router';
 import Button from '../../atoms/Button';
 import ProfileArea from './ProfileArea';
 import { weddingdateConvert } from '../../../services/utils';
 import useInvitation from '../../../hooks/useInvitation';
+import EditNotif from '../../atoms/EditNotif';
+import { ROUTE_INVITATION_EDIT } from '../../../constants/api-paths';
 
 export default function PageHome(): JSX.Element {
+  const [editTooltip, setEditTooltip] = useState(true);
   const linkRef = useRef(null);
   const { invitation, isLoading, weddingDate } = useInvitation();
+  const router = useRouter();
 
   const handleCopy = () => {
     if (navigator) {
@@ -18,8 +25,25 @@ export default function PageHome(): JSX.Element {
     }
   };
 
+  useEffect(() => {
+    setTimeout(() => { setEditTooltip(false); }, 5000);
+  }, []);
+
   return (
     <div css={tw`my-5 font-family['Poppins']`}>
+      <div tw="flex justify-end py-3 relative">
+        <Button
+          text={<FiSettings tw="text-xl text-blue-700 cursor-pointer" />}
+          color="default"
+          tw="p-0"
+          onMouseOver={() => setEditTooltip(true)}
+          onMouseOut={() => setEditTooltip(false)}
+          onClick={() => router.push(ROUTE_INVITATION_EDIT)}
+        />
+        {
+          editTooltip && <EditNotif />
+        }
+      </div>
       <ProfileArea
         isLoading={isLoading}
         groom_fullname={invitation?.groom_fullname || '-'}
@@ -51,8 +75,8 @@ export default function PageHome(): JSX.Element {
             ref={linkRef}
           />
           <div tw="grid grid-cols-2 gap-5">
-            <Button text="Copy" color="purple" onClick={handleCopy} />
-            <Button text="Open Web" color="success" />
+            <Button text="Copy" color="purple" onClick={handleCopy} disabled={isLoading} />
+            <Button text="Open Web" color="success" disabled={isLoading} />
           </div>
         </div>
       </div>

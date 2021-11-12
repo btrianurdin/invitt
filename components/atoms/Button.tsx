@@ -1,9 +1,9 @@
-import { ButtonHTMLAttributes } from 'react';
+import { ButtonHTMLAttributes, ReactElement } from 'react';
 import tw, { css } from 'twin.macro';
 import { colorTheme } from '../../constants/commons';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
-  text: string;
+  text: string | ReactElement;
   color: 'default' | 'pink' | 'danger' | 'success' | 'purple';
   outline?: boolean;
   typeSubmit?: boolean;

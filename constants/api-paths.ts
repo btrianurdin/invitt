@@ -11,3 +11,4 @@ export const ROUTE_COMPLETE_PROFILE = '/account/complete-profile';
 export const ROUTE_INVITATION_SHOW = '/invitations';
 export const ROUTE_WEDDINGDATE_SHOW = '/invitations/wedding-dates';
 export const ROUTE_GALLERY_SHOW = '/invitations/galleries';
+export const ROUTE_INVITATION_EDIT = '/home/edit';
