@@ -26,9 +26,9 @@ export default function PageHome(): JSX.Element {
   };
 
   useEffect(() => {
-    setTimeout(() => { setEditTooltip(false); }, 5000);
-    console.log(router.basePath);
-    
+    const tooltipTime = setTimeout(() => { setEditTooltip(false); }, 5000);
+
+    return clearTimeout(tooltipTime);
   }, []);
 
   return (
