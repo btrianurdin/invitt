@@ -69,3 +69,7 @@ export interface IUseInvitation {
   weddingDate: Array<IWeddingDateData> | null;
   gallery: Array<IGalleryData> | null;
 }
+
+export interface ITemplateProps {
+  invitation: IInvitationData,
+}

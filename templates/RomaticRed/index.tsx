@@ -2,6 +2,7 @@ import Head from 'next/head';
 import tw from 'twin.macro';
 import { Link } from 'react-scroll';
 import SimpleReactLightbox from 'simple-react-lightbox';
+import { ReactNode } from 'react';
 import styles, { Button, TitleLine } from './styles';
 import Navbar from './components/Navbar';
 import { HeroShape, CountdownShape, IntroduceShape } from './components/shapes';
@@ -11,8 +12,11 @@ import Gallery from './components/Gallery';
 import Input from './components/atoms/Input';
 import Select from './components/atoms/Select';
 import TextArea from './components/atoms/TextArea';
+import { ITemplateProps } from '../../interfaces';
 
-export default function RomanticRed(): JSX.Element {
+export default function RomanticRed({ invitation }: ITemplateProps): ReactNode {
+  console.log(invitation);
+
   return (
     <>
       <Head>

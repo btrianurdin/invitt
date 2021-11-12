@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { Link } from 'react-scroll';
 import tw from 'twin.macro';
 import SimpleReactLightbox from 'simple-react-lightbox';
+import { ReactNode } from 'react';
 import Countdown from './components/Countdown';
 import DateDetail from './components/DateDetail';
 import Gallery from './components/Gallery';
@@ -11,8 +12,11 @@ import Input from '../Components/atoms/Input';
 import Select from '../Components/atoms/Select';
 import TextArea from '../Components/atoms/TextArea';
 import LogoInvitt from '../../components/atoms/LogoInvitt';
+import { ITemplateProps } from '../../interfaces';
 
-export default function GreenLove(): JSX.Element {
+export default function GreenLove({ invitation }: ITemplateProps): ReactNode {
+  console.log(invitation);
+
   return (
     <>
       <Head>
