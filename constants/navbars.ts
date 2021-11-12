@@ -8,8 +8,8 @@ const navbars = [
     path: '/templates',
   },
   {
-    name: 'Settings',
-    path: '/settings',
+    name: 'Account',
+    path: '/account',
   },
   {
     name: 'Help',
