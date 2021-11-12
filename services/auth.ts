@@ -19,6 +19,13 @@ export const setCookiesAuth = (token: string): void => {
   Cookies.set('inv_token', encodeToken);
 };
 
+export const removeCookiesAuth = (): void => {
+  const checkCookies = Cookies.get('inv_token');
+  if (checkCookies) {
+    Cookies.remove('inv_token');
+  }
+};
+
 export const setSignUp = async (data: ISignUp): Promise<any> => {
   const url = `/${API_VERSION}/auth/register`;
 

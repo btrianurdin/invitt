@@ -19,4 +19,15 @@ export const setEditAccount = async (data: IEditAccount): Promise<any> => {
   });
 };
 
+export const setEditPassword = async (data: {[x: string]: string}): Promise<any> => {
+  const url = `/${API_VERSION}/users/password`;
+
+  return callApi({
+    url,
+    method: 'PUT',
+    data,
+    token: true,
+  });
+};
+
 export const su = (): null => null;

@@ -8,6 +8,7 @@ export const ROUTE_SIGNIN = '/auth/sign-in';
 export const ROUTE_SIGNUP = '/auth/sign-up';
 export const ROUTE_HOME = '/home';
 export const ROUTE_COMPLETE_PROFILE = '/account/complete-profile';
+export const ROUTE_EDIT_PASSWORD = '/account/edit-password';
 export const ROUTE_INVITATION_SHOW = '/invitations';
 export const ROUTE_WEDDINGDATE_SHOW = '/invitations/wedding-dates';
 export const ROUTE_GALLERY_SHOW = '/invitations/galleries';
