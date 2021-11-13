@@ -47,6 +47,15 @@ export interface IInvitationData {
   groom_fullname?: string;
   bride_fullname?: string;
   template?: string;
+  hero_title?: string;
+  groom_shortname?: string;
+  bride_shortname?: string;
+  introduce_title?: string;
+  groom_text?: string;
+  bride_text?: string;
+  greeting?: string;
+  active_at?: Date;
+  expired_at?: Date;
 }
 
 export interface IWeddingDateData {
@@ -72,5 +81,5 @@ export interface IUseInvitation {
 }
 
 export interface ITemplateProps {
-  invitation: IInvitationData,
+  invitation: IInvitationData | null;
 }

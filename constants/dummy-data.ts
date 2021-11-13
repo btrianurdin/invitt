@@ -7,6 +7,12 @@ export const invitationDummy = {
     public_name: 'invitt_assets/Eric_Kelley-Kuhl-groom_b0fkdc.jpg',
     url: 'https://res.cloudinary.com/trianurdin/image/upload/v1636082353/Eric_Kelley-Kuhl-groom_b0fkdc.jpg',
   },
+  groom_shortname: 'Your shortname',
+  bride_shortname: 'Your shortname',
+  introduce_title: 'Assalamualaikum',
+  groom_text: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.',
+  bride_text: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.',
+  greeting: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
 };
 
 export const weddingDateDummy = [

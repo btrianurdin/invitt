@@ -1,3 +1,6 @@
+import { IInvitationData } from '../interfaces';
+import { invitationDummy } from './dummy-data';
+
 export const colorTheme = {
   default: '#FFFFFF',
   pink: '#F037A5',
@@ -31,3 +34,7 @@ export const dummyImg = {
   bride: 'https://res.cloudinary.com/trianurdin/image/upload/v1636082453/claire-graham-blackburn-bridal-fontaine-106_j0xqdc.jpg',
   groom: 'https://res.cloudinary.com/trianurdin/image/upload/v1636082353/Eric_Kelley-Kuhl-groom_b0fkdc.jpg',
 };
+
+export const invitationPrint = (key: string, data: IInvitationData | null): any => (
+  (data && (data as any)[key]) || (invitationDummy as any)[key]
+);

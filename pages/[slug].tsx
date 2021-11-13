@@ -1,5 +1,6 @@
 import { GetServerSideProps } from 'next';
 import React from 'react';
+import Head from 'next/head';
 import { IInvitationData } from '../interfaces';
 import { getInvitationPublic } from '../services/invitation';
 import TemplateComponents from '../templates';
@@ -14,7 +15,14 @@ interface InvitationMainProps {
 
 export default function InvitationMain({ invitation }: InvitationMainProps): JSX.Element {
   const props = { invitation };
-  return React.createElement(TemplateComponents[(invitation.template as any)], props);
+  return (
+    <>
+      <Head>
+        <title>Wedding Invitation</title>
+      </Head>
+      {React.createElement(TemplateComponents[(invitation.template as any)], props)}
+    </>
+  );
 }
 
 export const getServerSideProps: GetServerSideProps = async (req) => {

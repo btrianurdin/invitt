@@ -1,8 +1,8 @@
 import Head from 'next/head';
+import InvitationEdit from '../../../components/organisms/InvitationEdit';
 import RoutePrivate from '../../../components/organisms/Route/RoutePrivate';
 import { titleName } from '../../../constants/commons';
 import { AuthProvider } from '../../../context/AuthContext';
-import GreenLove from '../../../templates/GreenLove';
 
 export default function InvEdit(): JSX.Element {
   return (
@@ -11,7 +11,7 @@ export default function InvEdit(): JSX.Element {
         <Head>
           <title>{titleName('Edit Invitation')}</title>
         </Head>
-        <GreenLove invitation={{ web_url: 'tes' }} />
+        <InvitationEdit />
       </RoutePrivate>
     </AuthProvider>
   );
