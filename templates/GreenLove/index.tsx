@@ -2,7 +2,6 @@ import Head from 'next/head';
 import { Link } from 'react-scroll';
 import tw from 'twin.macro';
 import SimpleReactLightbox from 'simple-react-lightbox';
-import { ReactNode } from 'react';
 import Countdown from './components/Countdown';
 import DateDetail from './components/DateDetail';
 import Gallery from './components/Gallery';
@@ -14,9 +13,7 @@ import TextArea from '../Components/atoms/TextArea';
 import LogoInvitt from '../../components/atoms/LogoInvitt';
 import { ITemplateProps } from '../../interfaces';
 
-export default function GreenLove({ invitation }: ITemplateProps): ReactNode {
-  console.log(invitation);
-
+export default function GreenLove({ invitation }: ITemplateProps): JSX.Element {
   return (
     <>
       <Head>
@@ -25,7 +22,7 @@ export default function GreenLove({ invitation }: ITemplateProps): ReactNode {
 
       <SimpleReactLightbox>
         {/* HERO */}
-        <div css={styles.heroCover({ coverImg: './assets/templates/greenlove/herocover.jpg' })}>
+        <div css={styles.heroCover({ coverImg: '/assets/templates/greenlove/herocover.jpg' })}>
           <HeroShape />
           <div tw="absolute z-index[10] p-2">
             <h1 tw="font-family['Tinos', 'serif'] font-size[42px] md:font-size[52px] font-thin text-center">
@@ -39,7 +36,7 @@ export default function GreenLove({ invitation }: ITemplateProps): ReactNode {
                 <br />
                 Sandra
               </h1>
-              <img src="./assets/templates/greenlove/circle-stack.svg" tw="width[85%] sm:width[70%] mx-auto" alt="Circle Stack" />
+              <img src="/assets/templates/greenlove/circle-stack.svg" tw="width[85%] sm:width[70%] mx-auto" alt="Circle Stack" />
             </div>
             <div tw="text-center py-4">
               <Link to="content" smooth duration={1000}>
@@ -62,7 +59,7 @@ export default function GreenLove({ invitation }: ITemplateProps): ReactNode {
               <div tw="flex flex-col mt-10">
                 <div tw="flex flex-col md:flex-row my-6">
                   <div css={[styles.personImgWrapped({ xs: '170px', md: '200px' }), tw`mx-auto md:mx-0`]}>
-                    <img src="./assets/templates/greenlove/groom.png" alt="Circle Stack" />
+                    <img src="/assets/templates/greenlove/groom.png" alt="Circle Stack" />
                   </div>
                   <div tw="flex-1 lg:(width[60%] flex-none) py-5 md:(py-0 px-5)">
                     <p>
@@ -78,7 +75,7 @@ export default function GreenLove({ invitation }: ITemplateProps): ReactNode {
                 </div>
                 <div tw="flex flex-col md:(flex-row-reverse my-6)">
                   <div css={[styles.personImgWrapped({ xs: '185px', md: '200px', borderPos: 'right' }), tw`mx-auto md:mx-0`]}>
-                    <img src="./assets/templates/greenlove/bride.png" alt="Circle Stack" />
+                    <img src="/assets/templates/greenlove/bride.png" alt="Circle Stack" />
                   </div>
                   <div tw="flex-1 lg:(width[60%] flex-none) py-5 md:(text-right py-0 px-5)">
                     <p>
@@ -99,10 +96,10 @@ export default function GreenLove({ invitation }: ITemplateProps): ReactNode {
           {/* COUNTDOWN */}
           <div css={styles.countdown}>
             <div css={tw`absolute top-2 left-2 flex justify-start`}>
-              <img src="./assets/templates/greenlove/countdown-shape.svg" tw="width[50%] lg:width[75%]" alt="Left Shape" />
+              <img src="/assets/templates/greenlove/countdown-shape.svg" tw="width[50%] lg:width[75%]" alt="Left Shape" />
             </div>
             <div css={tw`absolute bottom-2 right-2 rotate-180 flex justify-start`}>
-              <img src="./assets/templates/greenlove/countdown-shape.svg" tw="width[50%] lg:width[75%]" alt="Left Shape" />
+              <img src="/assets/templates/greenlove/countdown-shape.svg" tw="width[50%] lg:width[75%]" alt="Left Shape" />
             </div>
             <div tw="width[90%] mx-auto grid gap-y-4 grid-cols-2 md:(flex justify-evenly) text-center py-14 sm:py-5">
               <Countdown value={9} unit="DAY" />
@@ -142,12 +139,12 @@ export default function GreenLove({ invitation }: ITemplateProps): ReactNode {
               <TitleLine>Gallery</TitleLine>
               <div css={styles.photoGallery}>
                 <Gallery images={[
-                  './assets/images/wedding-1.jpg',
-                  './assets/images/wedding-2.jpg',
-                  './assets/images/wedding-3.png',
-                  './assets/images/wedding-4.jpg',
-                  './assets/images/wedding-5.jpg',
-                  './assets/images/wedding-6.jpg',
+                  '/assets/images/wedding-1.jpg',
+                  '/assets/images/wedding-2.jpg',
+                  '/assets/images/wedding-3.png',
+                  '/assets/images/wedding-4.jpg',
+                  '/assets/images/wedding-5.jpg',
+                  '/assets/images/wedding-6.jpg',
                 ]}
                 />
               </div>
@@ -157,10 +154,10 @@ export default function GreenLove({ invitation }: ITemplateProps): ReactNode {
           {/* Greeting */}
           <div css={styles.greeting}>
             <div css={tw`absolute top-0 left-0 flex justify-start`}>
-              <img src="./assets/templates/greenlove/greeting-shape.svg" tw="width[60%] md:width[75%]" alt="Left Shape" />
+              <img src="/assets/templates/greenlove/greeting-shape.svg" tw="width[60%] md:width[75%]" alt="Left Shape" />
             </div>
             <div css={tw`absolute bottom-0 right-0 rotate-180 flex justify-start`}>
-              <img src="./assets/templates/greenlove/greeting-shape.svg" tw="width[60%] md:width[75%]" alt="Left Shape" />
+              <img src="/assets/templates/greenlove/greeting-shape.svg" tw="width[60%] md:width[75%]" alt="Left Shape" />
             </div>
             <div tw="padding[80px 20px] width[90%] md:width[80%] mx-auto">
               <h1 tw="font-size[28px] md:font-size[36px] font-bold">

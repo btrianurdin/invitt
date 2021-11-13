@@ -14,7 +14,7 @@ import Select from './components/atoms/Select';
 import TextArea from './components/atoms/TextArea';
 import { ITemplateProps } from '../../interfaces';
 
-export default function RomanticRed({ invitation }: ITemplateProps): ReactNode {
+export default function RomanticRed({ invitation }: ITemplateProps): JSX.Element {
   console.log(invitation);
 
   return (

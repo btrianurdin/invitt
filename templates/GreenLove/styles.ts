@@ -67,7 +67,7 @@ const styles = {
     ${tw`relative text-white font-family['Poppins']`}
   `,
   datePage: css`
-    background-image: url("./assets/templates/greenlove/date-bg.svg");
+    background-image: url("/assets/templates/greenlove/date-bg.svg");
     ${tw`bg-cover lg:(h-screen flex items-center) bg-center min-h-screen overflow-hidden`}
   `,
   galleryPage: css`
