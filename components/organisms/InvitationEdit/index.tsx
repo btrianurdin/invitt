@@ -3,7 +3,7 @@ import { useUpdateAtom } from 'jotai/utils';
 import { useEffect } from 'react';
 import tw from 'twin.macro';
 import useInvitation from '../../../hooks/useInvitation';
-import { getInvitationAtom, invitationAtom } from '../../../store';
+import { invitationAtom } from '../../../store';
 import GreenLove from '../../../templates/GreenLove';
 import PageLoading from '../../atoms/PageLoading';
 import InvitationEditForm from './InvitationEditForm';

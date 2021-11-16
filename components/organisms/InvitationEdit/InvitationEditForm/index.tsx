@@ -1,8 +1,7 @@
 import { useAtom } from 'jotai';
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useState } from 'react';
 import { FiChevronsLeft, FiChevronsRight } from 'react-icons/fi';
 import tw, { css } from 'twin.macro';
-import debounce from 'lodash.debounce';
 import { invitationAtom } from '../../../../store';
 import Button from '../../../atoms/Button';
 import Input from '../../../atoms/Input';
@@ -16,19 +15,6 @@ const styles = {
   toggleButton: tw`m-0 p-1.5 absolute bg-white border-none text-pink-500 margin-left[-42px] mt-4
   rounded-none text-3xl shadow-md`,
 };
-
-function useDebounce(callback: any, delay: any) {
-	// Memoizing the callback because if it's an arrow function
-	// it would be different on each render
-	const memoizedCallback = useCallback(callback, []);
-	const debouncedFn = useRef(debounce(memoizedCallback, delay));
-
-	useEffect(() => {
-		debouncedFn.current = debounce(memoizedCallback, delay);
-	}, [memoizedCallback, debouncedFn, delay]);
-
-	return debouncedFn.current;
-}
 
 export default function InvitationEditForm(): JSX.Element {
   const [toggleEdit, setToggleEdit] = useState(true);
@@ -48,12 +34,12 @@ export default function InvitationEditForm(): JSX.Element {
         <Input
           label="Groom Shortname"
           value={inv?.groom_shortname}
-          onChange={(e) => setInv({...inv, groom_shortname: e.target.value})}
+          onChange={(e) => setInv({ ...inv, groom_shortname: e.target.value })}
         />
         <Input
           label="Bride Shortname"
           value={inv?.bride_shortname}
-          onChange={(e) => setInv({...inv, bride_shortname: e.target.value})}
+          onChange={(e) => setInv({ ...inv, bride_shortname: e.target.value })}
         />
       </div>
     </div>
