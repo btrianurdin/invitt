@@ -25,7 +25,7 @@ export default function InvitationEditHeader(): JSX.Element {
         onClick={() => router.push(ROUTE_HOME)}
       />
       <h1 tw="text-lg font-semibold">Invitt.</h1>
-      <h1 tw="bg-yellow-400 rounded-full animate-pulse text-white px-2 hidden sm:block">editing</h1>
+      <div tw="bg-pink-500 rounded-full animate-pulse text-white w-4 h-4 hidden sm:block" />
     </div>
   );
 }

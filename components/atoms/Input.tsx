@@ -29,7 +29,7 @@ export default function Input({
         {label}
         {required && <span tw="text-red-700">*</span>}
       </label>
-      <input id={id} css={styles.input({ isError })} {...rest} />
+      <input id={id} css={styles.input({ isError })} spellCheck="false" {...rest} />
     </div>
   );
 }

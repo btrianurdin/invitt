@@ -1,7 +1,11 @@
-import { createContext, useContext } from 'react';
+import {
+  createContext, useContext, useReducer,
+} from 'react';
 import { galleryDummy, invitationDummy, weddingDateDummy } from '../constants/dummy-data';
 import useInvitation from '../hooks/useInvitation';
 import { IGalleryData, IInvitationData, IWeddingDateData } from '../interfaces';
+import InvitationDispatch from './InvitationDispatch';
+import InvitationReducer from './reducers/InvitationReducer';
 
 export interface IInvitationContext {
   isLoading: boolean;
@@ -27,15 +31,15 @@ export function InvitationProvider({ children }: InvitationProviderProps): JSX.E
   const {
     isLoading, invitation, weddingDate, gallery,
   } = useInvitation();
+  const [inv, setInv] = useReducer(InvitationReducer, {
+    isLoading,
+    invitation,
+    weddingDate,
+    gallery,
+  });
 
   return (
-    <InvitationContext.Provider value={{
-      isLoading,
-      invitation,
-      weddingDate,
-      gallery,
-    }}
-    >
+    <InvitationContext.Provider value={inv}>
       {children}
     </InvitationContext.Provider>
   );

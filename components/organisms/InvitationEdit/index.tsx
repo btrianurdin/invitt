@@ -1,5 +1,9 @@
+import { useAtom } from 'jotai';
+import { useUpdateAtom } from 'jotai/utils';
+import { useEffect } from 'react';
 import tw from 'twin.macro';
 import useInvitation from '../../../hooks/useInvitation';
+import { getInvitationAtom, invitationAtom } from '../../../store';
 import GreenLove from '../../../templates/GreenLove';
 import PageLoading from '../../atoms/PageLoading';
 import InvitationEditForm from './InvitationEditForm';
@@ -9,17 +13,25 @@ export default function InvitationEdit(): JSX.Element {
   const {
     invitation, gallery, weddingDate, isLoading,
   } = useInvitation();
+  const [inv, setInv] = useAtom(invitationAtom);
+
+  useEffect(() => {
+    setInv({...inv, ...invitation});
+  }, [invitation]);
+
   return (
     <>
       <InvitationEditHeader />
       <div css={tw`mt-11`} />
-      <InvitationEditForm />
       {
         isLoading ? <PageLoading w={30} h={30} />
           : (
-            <GreenLove
-              invitation={invitation}
-            />
+            <>
+              <InvitationEditForm />
+              <GreenLove
+                invitation={inv}
+              />
+            </>
           )
       }
     </>

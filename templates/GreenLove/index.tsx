@@ -1,6 +1,7 @@
 import { Link } from 'react-scroll';
 import tw from 'twin.macro';
 import SimpleReactLightbox from 'simple-react-lightbox';
+import { useAtom } from 'jotai';
 import Countdown from './components/Countdown';
 import DateDetail from './components/DateDetail';
 import Gallery from './components/Gallery';
@@ -12,6 +13,7 @@ import TextArea from '../Components/atoms/TextArea';
 import LogoInvitt from '../../components/atoms/LogoInvitt';
 import { ITemplateProps } from '../../interfaces';
 import { invitationPrint } from '../../constants/commons';
+import { invitationAtom } from '../../store';
 
 export default function GreenLove({ invitation }: ITemplateProps): JSX.Element {
   return (
