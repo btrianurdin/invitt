@@ -1,24 +1,43 @@
-import { useAtom } from 'jotai';
 import { useState } from 'react';
 import { FiChevronsLeft, FiChevronsRight } from 'react-icons/fi';
 import tw, { css } from 'twin.macro';
-import { invitationAtom } from '../../../../store';
+import { colorTheme } from '../../../../constants/commons';
 import Button from '../../../atoms/Button';
 import Input from '../../../atoms/Input';
+import InvitationEditor from './InvitationEditor';
 
 const styles = {
   editingForm: css`
-    ${tw`fixed width[350px] height[80%] bg-white bottom-2 right-2 z-index[1000] shadow-md rounded
-    transform[translateX(360px)] transition-transform duration-300 ease-out`}
+    ${tw`fixed bottom-2 right-2 z-index[1000] height[80%] transform[translateX(360px)] 
+    transition-transform duration-300 ease-out`}
   `,
   showEditingForm: tw`transform[translateX(0)] transition-transform duration-300 ease-in`,
-  toggleButton: tw`m-0 p-1.5 absolute bg-white border-none text-pink-500 margin-left[-42px] mt-4
+  toggleButton: tw`m-0 p-1.5 absolute bg-white border-none text-pink-500 margin-left[-42px] mt-12
   rounded-none text-3xl shadow-md`,
+  tab: tw`width[350px] h-full bg-white shadow-md rounded overflow-hidden`,
+  tabHeader: css`
+    ${tw`flex justify-between border-b py-3 px-5`}
+    & > button{
+      ${tw`transition-colors duration-200`}
+      &.active{
+        color: ${colorTheme.pink};
+      }
+    }
+  `,
+  tabBody: tw`px-5 height[calc(100% - 50px)] overflow-x-auto`,
+  tabContent: css`
+    display: none;
+    &.active{
+      display: block;
+    }
+  `,
 };
 
 export default function InvitationEditForm(): JSX.Element {
   const [toggleEdit, setToggleEdit] = useState(true);
-  const [inv, setInv] = useAtom(invitationAtom);
+  const [toggleTab, setToggleTab] = useState(1);
+
+  const activeClass = (index: number, className: string) => (toggleTab === index ? className : '');
 
   return (
     <div css={[styles.editingForm, toggleEdit ? styles.showEditingForm : '']}>
@@ -30,17 +49,27 @@ export default function InvitationEditForm(): JSX.Element {
           onClick={() => setToggleEdit(!toggleEdit)}
         />
       </div>
-      <div tw="px-5">
-        <Input
-          label="Groom Shortname"
-          value={inv?.groom_shortname}
-          onChange={(e) => setInv({ ...inv, groom_shortname: e.target.value })}
-        />
-        <Input
-          label="Bride Shortname"
-          value={inv?.bride_shortname}
-          onChange={(e) => setInv({ ...inv, bride_shortname: e.target.value })}
-        />
+      <div css={styles.tab}>
+        <div css={styles.tabHeader}>
+          <button type="button" onClick={() => setToggleTab(1)} className={activeClass(1, 'active')}>Basic</button>
+          <button type="button" onClick={() => setToggleTab(2)} className={activeClass(2, 'active')}>Basic</button>
+          <button type="button" onClick={() => setToggleTab(3)} className={activeClass(3, 'active')}>Basic</button>
+          <button type="button" onClick={() => setToggleTab(4)} className={activeClass(4, 'active')}>Basic</button>
+        </div>
+        <div css={styles.tabBody}>
+          <div css={styles.tabContent} className={activeClass(1, 'active')}>
+            <InvitationEditor />
+          </div>
+          <div css={styles.tabContent} className={activeClass(2, 'active')}>
+            <h2>ini tab 2</h2>
+          </div>
+          <div css={styles.tabContent} className={activeClass(3, 'active')}>
+            <h2>ini tab 3</h2>
+          </div>
+          <div css={styles.tabContent} className={activeClass(4, 'active')}>
+            <h2>ini tab 4</h2>
+          </div>
+        </div>
       </div>
     </div>
   );
