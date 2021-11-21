@@ -27,10 +27,11 @@ export default function InvitationEditor(): JSX.Element {
   const picUploadChange = async (e: any, pic: 'bride' | 'groom') => {
     setUploadLoading({ ...uploadLoading, [pic]: true });
     const file = e.target.files[0];
-    const ext = e.target.files[0].name.split('.').pop();
+    const ext = e.target.files[0]?.name.split('.').pop();
+    if (!file) return;
     if (!allowedExtention.includes(ext)) {
       toast.error('Picture extention not valid');
-    } else if (file) {
+    } else {
       const invPublicPic = inv ? (inv as any)[`${pic}_pic`] : null;
       if (invPublicPic.public_name) {
         await removeInvitationPic({ field: pic });
