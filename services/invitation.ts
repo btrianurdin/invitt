@@ -1,4 +1,5 @@
 import callApi from '../configs/callApi';
+import { IUploadPicture } from '../interfaces';
 
 const API_VERSION = 'api';
 
@@ -17,6 +18,27 @@ export const getInvitation = async (): Promise<any> => {
   return callApi({
     url,
     method: 'GET',
+    token: true,
+  });
+};
+
+export const setInvitationPic = async (data: IUploadPicture): Promise<any> => {
+  const url = `/${API_VERSION}/invitations/picture`;
+
+  return callApi({
+    url,
+    data,
+    method: 'PUT',
+    token: true,
+  });
+};
+export const removeInvitationPic = async (data: IUploadPicture): Promise<any> => {
+  const url = `/${API_VERSION}/invitations/picture`;
+
+  return callApi({
+    url,
+    data,
+    method: 'DELETE',
     token: true,
   });
 };

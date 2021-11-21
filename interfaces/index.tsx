@@ -83,3 +83,8 @@ export interface IUseInvitation {
 export interface ITemplateProps {
   invitation: IInvitationData | null;
 }
+
+export interface IUploadPicture {
+  field?: 'groom' | 'bride';
+  content?: string;
+}

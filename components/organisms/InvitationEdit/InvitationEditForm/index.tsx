@@ -3,7 +3,6 @@ import { FiChevronsLeft, FiChevronsRight } from 'react-icons/fi';
 import tw, { css } from 'twin.macro';
 import { colorTheme } from '../../../../constants/commons';
 import Button from '../../../atoms/Button';
-import Input from '../../../atoms/Input';
 import InvitationEditor from './InvitationEditor';
 
 const styles = {
@@ -51,7 +50,7 @@ export default function InvitationEditForm(): JSX.Element {
       </div>
       <div css={styles.tab}>
         <div css={styles.tabHeader}>
-          <button type="button" onClick={() => setToggleTab(1)} className={activeClass(1, 'active')}>Basic</button>
+          <button type="button" onClick={() => setToggleTab(1)} className={activeClass(1, 'active')}>Pictures</button>
           <button type="button" onClick={() => setToggleTab(2)} className={activeClass(2, 'active')}>Basic</button>
           <button type="button" onClick={() => setToggleTab(3)} className={activeClass(3, 'active')}>Basic</button>
           <button type="button" onClick={() => setToggleTab(4)} className={activeClass(4, 'active')}>Basic</button>

@@ -1,10 +1,8 @@
 export const invitationDummy = {
   bride_pic: {
-    public_name: 'invitt_assets/claire-graham-blackburn-bridal-fontaine-106_j0xqdc.jpg',
     url: 'https://res.cloudinary.com/trianurdin/image/upload/v1636082453/claire-graham-blackburn-bridal-fontaine-106_j0xqdc.jpg',
   },
   groom_pic: {
-    public_name: 'invitt_assets/Eric_Kelley-Kuhl-groom_b0fkdc.jpg',
     url: 'https://res.cloudinary.com/trianurdin/image/upload/v1636082353/Eric_Kelley-Kuhl-groom_b0fkdc.jpg',
   },
   groom_shortname: 'Your shortname',
