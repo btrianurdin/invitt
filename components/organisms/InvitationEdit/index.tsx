@@ -1,5 +1,4 @@
 import { useAtom } from 'jotai';
-import { useUpdateAtom } from 'jotai/utils';
 import { useEffect } from 'react';
 import tw from 'twin.macro';
 import useInvitation from '../../../hooks/useInvitation';

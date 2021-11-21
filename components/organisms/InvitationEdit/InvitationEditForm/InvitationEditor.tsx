@@ -1,12 +1,10 @@
 import { useAtom } from 'jotai';
 import { useState } from 'react';
-import imageToBase64 from 'image-to-base64';
 import tw from 'twin.macro';
 import { toast } from 'react-toastify';
 import { invitationAtom } from '../../../../store';
 import InputFile from '../../../atoms/InputFile';
 import { removeInvitationPic, setInvitationPic } from '../../../../services/invitation';
-import Input from '../../../atoms/Input';
 
 const allowedExtention = ['jpg', 'png', 'jpeg'];
 
