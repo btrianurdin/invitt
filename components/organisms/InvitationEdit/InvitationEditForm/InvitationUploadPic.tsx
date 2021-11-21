@@ -15,7 +15,7 @@ const fileToBase64 = async (file: any) => new Promise((resolve, reject) => {
   reader.onerror = (e) => reject(e);
 });
 
-export default function InvitationEditor(): JSX.Element {
+export default function InvitationUploadPic(): JSX.Element {
   const [inv, setInv] = useAtom(invitationAtom);
   const [uploadLoading, setUploadLoading] = useState({
     groom: false,

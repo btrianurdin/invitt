@@ -1,5 +1,5 @@
 import callApi from '../configs/callApi';
-import { IUploadPicture } from '../interfaces';
+import { IInvitationData, IUploadPicture } from '../interfaces';
 
 const API_VERSION = 'api';
 
@@ -63,4 +63,13 @@ export const getGallery = async (): Promise<any> => {
   });
 };
 
-export const nulltest = (): null => null;
+export const setGeneralInvitation = async (data: IInvitationData | null): Promise<any> => {
+  const url = `/${API_VERSION}/invitations`;
+
+  return callApi({
+    url,
+    data,
+    method: 'PUT',
+    token: true,
+  });
+};

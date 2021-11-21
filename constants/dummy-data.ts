@@ -7,6 +7,7 @@ export const invitationDummy = {
   },
   groom_shortname: 'Your shortname',
   bride_shortname: 'Your shortname',
+  hero_title: 'Wedding Invitation',
   introduce_title: 'Assalamualaikum',
   groom_text: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.',
   bride_text: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.',

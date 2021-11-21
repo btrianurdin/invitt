@@ -34,8 +34,8 @@ export interface ICompleteProfileData {
 }
 
 export interface IPicData {
-  public_name: string;
-  url: string;
+  public_name?: string;
+  url?: string;
 }
 
 export interface IInvitationData {

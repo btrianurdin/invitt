@@ -21,7 +21,7 @@ export default function GreenLove({ invitation }: ITemplateProps): JSX.Element {
         <HeroShape />
         <div tw="absolute z-index[10] p-2">
           <h1 tw="font-family['Tinos', 'serif'] font-size[42px] md:font-size[52px] font-thin text-center">
-            Wedding Invitation
+            {invitationPrint('hero_title', invitation)}
           </h1>
           <div tw="relative my-8 flex items-center justify-center">
             <h1 tw="absolute text-center font-family['Italiana'] font-size[42px] md:font-size[52px]">
@@ -152,8 +152,7 @@ export default function GreenLove({ invitation }: ITemplateProps): JSX.Element {
           </div>
           <div tw="padding[80px 20px] width[90%] md:width[80%] mx-auto">
             <h1 tw="font-size[28px] md:font-size[36px] font-bold">
-              It is a long established fact that a reader will be
-              distracted by the readable content of a page when looking at its layout.
+              {invitationPrint('greeting', invitation)}
             </h1>
           </div>
         </div>

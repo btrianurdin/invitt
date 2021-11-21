@@ -3,7 +3,8 @@ import { FiChevronsLeft, FiChevronsRight } from 'react-icons/fi';
 import tw, { css } from 'twin.macro';
 import { colorTheme } from '../../../../constants/commons';
 import Button from '../../../atoms/Button';
-import InvitationEditor from './InvitationEditor';
+import InvitationGeneral from './InvitationGeneral';
+import InvitationUploadPic from './InvitationUploadPic';
 
 const styles = {
   editingForm: css`
@@ -51,16 +52,16 @@ export default function InvitationEditForm(): JSX.Element {
       <div css={styles.tab}>
         <div css={styles.tabHeader}>
           <button type="button" onClick={() => setToggleTab(1)} className={activeClass(1, 'active')}>Pictures</button>
-          <button type="button" onClick={() => setToggleTab(2)} className={activeClass(2, 'active')}>Basic</button>
+          <button type="button" onClick={() => setToggleTab(2)} className={activeClass(2, 'active')}>General</button>
           <button type="button" onClick={() => setToggleTab(3)} className={activeClass(3, 'active')}>Basic</button>
           <button type="button" onClick={() => setToggleTab(4)} className={activeClass(4, 'active')}>Basic</button>
         </div>
         <div css={styles.tabBody}>
           <div css={styles.tabContent} className={activeClass(1, 'active')}>
-            <InvitationEditor />
+            <InvitationUploadPic />
           </div>
           <div css={styles.tabContent} className={activeClass(2, 'active')}>
-            <h2>ini tab 2</h2>
+            <InvitationGeneral />
           </div>
           <div css={styles.tabContent} className={activeClass(3, 'active')}>
             <h2>ini tab 3</h2>
