@@ -60,9 +60,11 @@ export interface IInvitationData {
 
 export interface IWeddingDateData {
   _id?: string;
+  title?: string;
   place_name?: string;
   date?: string;
   location?: string;
+  map_link?: string;
   invitation?: string;
 }
 
@@ -82,6 +84,7 @@ export interface IUseInvitation {
 
 export interface ITemplateProps {
   invitation: IInvitationData | null;
+  weddingDates: IWeddingDateData[] | null;
 }
 
 export interface IUploadPicture {

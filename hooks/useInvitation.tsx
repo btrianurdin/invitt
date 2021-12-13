@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useState } from 'react';
 import { galleryDummy, weddingDateDummy } from '../constants/dummy-data';
 import { IGalleryData, IInvitationData, IUseInvitation, IWeddingDateData } from '../interfaces';
-import { getGallery, getInvitation, getWeddingDate } from '../services/invitation';
+import { getGallery, getInvitation } from '../services/invitation';
+import { getWeddingDate } from '../services/wedding-dates';
 
 export default function useInvitation(): IUseInvitation {
   const [invitation, setInvitation] = useState<IInvitationData | null>(null);
@@ -17,14 +18,12 @@ export default function useInvitation(): IUseInvitation {
     const res = await getWeddingDate();
     
     if (res?.status !== 'error') setWeddingDates(res);
-    setWeddingDates(weddingDateDummy);
   }, []);
 
   const Getgalleries = useCallback(async () => {
     const res = await getGallery();
     
     if (res?.status !== 'error') setGalleries(res);
-    setGalleries(galleryDummy);
   }, []);
 
   useEffect(() => {

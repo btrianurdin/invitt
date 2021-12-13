@@ -13,7 +13,7 @@ import LogoInvitt from '../../components/atoms/LogoInvitt';
 import { ITemplateProps } from '../../interfaces';
 import { invitationPrint } from '../../constants/commons';
 
-export default function GreenLove({ invitation }: ITemplateProps): JSX.Element {
+export default function GreenLove({ invitation, weddingDates }: ITemplateProps): JSX.Element {
   return (
     <SimpleReactLightbox>
       {/* HERO */}
@@ -101,28 +101,27 @@ export default function GreenLove({ invitation }: ITemplateProps): JSX.Element {
         </div>
 
         {/* DATE */}
-        <div css={styles.datePage}>
-          <div tw="py-14 sm:px-10 flex flex-col md:flex-row width[90%] mx-auto text-center text-white">
-            <div tw="flex-1 my-5">
-              <DateDetail
-                title="Akad Nikah"
-                placeName="Balai Makarti Muktitama"
-                date="Senin, 20 September 2021"
-                location="Jl. TMP. Kalibata No.17, RT.6/RW.7, Rawajati, Kec. Pancoran,
-                  Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12750"
-              />
-            </div>
-            <div tw="flex-1 my-5">
-              <DateDetail
-                title="Acara Resepsi"
-                placeName="Balai Makarti Muktitama"
-                date="Senin, 20 September 2021"
-                location="Jl. TMP. Kalibata No.17, RT.6/RW.7, Rawajati, Kec. Pancoran,
-                  Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12750"
-              />
-            </div>
-          </div>
-        </div>
+        {
+          weddingDates && weddingDates.length === 0 ? ''
+            : (
+              <div css={styles.datePage}>
+                <div tw="py-14 sm:px-10 flex flex-col md:flex-row width[90%] mx-auto text-center text-white">
+                  {
+                  weddingDates?.map((wd) => (
+                    <div tw="flex-1 my-5" key={`wd.title${Math.floor(Math.random() * 99)}`}>
+                      <DateDetail
+                        title={wd?.title || '-'}
+                        placeName={wd?.place_name || '-'}
+                        date={wd?.date || '-'}
+                        location={wd?.location || '-'}
+                      />
+                    </div>
+                  ))
+                }
+                </div>
+              </div>
+            )
+        }
 
         {/* Gallery */}
         <div css={styles.galleryPage}>

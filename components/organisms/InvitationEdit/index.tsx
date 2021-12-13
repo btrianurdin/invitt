@@ -1,8 +1,9 @@
 import { useAtom } from 'jotai';
 import { useEffect } from 'react';
 import tw from 'twin.macro';
+import { weddingDateDummy } from '../../../constants/dummy-data';
 import useInvitation from '../../../hooks/useInvitation';
-import { invitationAtom } from '../../../store';
+import { invitationAtom, weddingDateAtom } from '../../../store';
 import GreenLove from '../../../templates/GreenLove';
 import PageLoading from '../../atoms/PageLoading';
 import InvitationEditForm from './InvitationEditForm';
@@ -13,11 +14,13 @@ export default function InvitationEdit(): JSX.Element {
     invitation, gallery, weddingDate, isLoading,
   } = useInvitation();
   const [inv, setInv] = useAtom(invitationAtom);
+  const [weddDate, setWeddDate] = useAtom(weddingDateAtom);
 
   useEffect(() => {
     setInv({...inv, ...invitation});
-  }, [invitation]);
-
+    setWeddDate(weddingDate);
+  }, [invitation, weddingDate]);
+  
   return (
     <>
       <InvitationEditHeader />
@@ -29,6 +32,7 @@ export default function InvitationEdit(): JSX.Element {
               <InvitationEditForm />
               <GreenLove
                 invitation={inv}
+                weddingDates={weddDate}
               />
             </>
           )

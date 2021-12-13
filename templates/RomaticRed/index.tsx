@@ -51,7 +51,7 @@ export default function RomanticRed({ invitation }: ITemplateProps): JSX.Element
       <div id="content" css={tw`relative`}>
 
         {/* NAVBAR */}
-        <Navbar />
+        {/* <Navbar /> */}
         {/* <Navbar /> */}
 
         {/* SECTION 2 (INTRODUCE) */}

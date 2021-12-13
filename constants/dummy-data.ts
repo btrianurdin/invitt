@@ -16,6 +16,7 @@ export const invitationDummy = {
 
 export const weddingDateDummy = [
   {
+    title: 'Akad Nikah',
     place_name: 'Gedung Nikahan Jkt',
     date: '2021-12-12T05:30:00.000Z',
     location: 'Jl. TMP. Kalibata No.17, RT.6/RW.7, Rawajati, Kec. Pancoran, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12750',

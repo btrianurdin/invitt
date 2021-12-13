@@ -5,6 +5,7 @@ import { colorTheme } from '../../../../constants/commons';
 import Button from '../../../atoms/Button';
 import InvitationGeneral from './InvitationGeneral';
 import InvitationUploadPic from './InvitationUploadPic';
+import InvitationWeddingDates from './InvitationWeddingDates/invitationWeddingDates';
 
 const styles = {
   editingForm: css`
@@ -53,7 +54,7 @@ export default function InvitationEditForm(): JSX.Element {
         <div css={styles.tabHeader}>
           <button type="button" onClick={() => setToggleTab(1)} className={activeClass(1, 'active')}>Pictures</button>
           <button type="button" onClick={() => setToggleTab(2)} className={activeClass(2, 'active')}>General</button>
-          <button type="button" onClick={() => setToggleTab(3)} className={activeClass(3, 'active')}>Basic</button>
+          <button type="button" onClick={() => setToggleTab(3)} className={activeClass(3, 'active')}>Dates</button>
           <button type="button" onClick={() => setToggleTab(4)} className={activeClass(4, 'active')}>Basic</button>
         </div>
         <div css={styles.tabBody}>
@@ -64,7 +65,7 @@ export default function InvitationEditForm(): JSX.Element {
             <InvitationGeneral />
           </div>
           <div css={styles.tabContent} className={activeClass(3, 'active')}>
-            <h2>ini tab 3</h2>
+            <InvitationWeddingDates />
           </div>
           <div css={styles.tabContent} className={activeClass(4, 'active')}>
             <h2>ini tab 4</h2>

@@ -43,16 +43,6 @@ export const removeInvitationPic = async (data: IUploadPicture): Promise<any> =>
   });
 };
 
-export const getWeddingDate = async (): Promise<any> => {
-  const url = `/${API_VERSION}/invitations/wedding-dates`;
-
-  return callApi({
-    url,
-    method: 'GET',
-    token: true,
-  });
-};
-
 export const getGallery = async (): Promise<any> => {
   const url = `/${API_VERSION}/invitations/galleries`;
 

@@ -25,6 +25,7 @@
   "rules": {
     "react/jsx-no-comment-textnodes": "off",
     "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
     "jsx-a11y/anchor-is-valid": "off",
     "camelcase": "off",
     "import/extensions": "off",
