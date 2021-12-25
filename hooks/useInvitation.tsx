@@ -44,6 +44,6 @@ export default function useInvitation(): IUseInvitation {
     isLoading: !invitation && !weddingDates && !galleries,
     invitation: invitation,
     weddingDate: weddingDates,
-    gallery: null,
+    gallery: galleries,
   };
 }

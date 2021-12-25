@@ -3,6 +3,7 @@ import { FiChevronsLeft, FiChevronsRight } from 'react-icons/fi';
 import tw, { css } from 'twin.macro';
 import { colorTheme } from '../../../../constants/commons';
 import Button from '../../../atoms/Button';
+import InvitationGalleries from './InvitationGalleries';
 import InvitationGeneral from './InvitationGeneral';
 import InvitationUploadPic from './InvitationUploadPic';
 import InvitationWeddingDates from './InvitationWeddingDates/invitationWeddingDates';
@@ -55,7 +56,7 @@ export default function InvitationEditForm(): JSX.Element {
           <button type="button" onClick={() => setToggleTab(1)} className={activeClass(1, 'active')}>Pictures</button>
           <button type="button" onClick={() => setToggleTab(2)} className={activeClass(2, 'active')}>General</button>
           <button type="button" onClick={() => setToggleTab(3)} className={activeClass(3, 'active')}>Dates</button>
-          <button type="button" onClick={() => setToggleTab(4)} className={activeClass(4, 'active')}>Basic</button>
+          <button type="button" onClick={() => setToggleTab(4)} className={activeClass(4, 'active')}>Galleries</button>
         </div>
         <div css={styles.tabBody}>
           <div css={styles.tabContent} className={activeClass(1, 'active')}>
@@ -68,7 +69,7 @@ export default function InvitationEditForm(): JSX.Element {
             <InvitationWeddingDates />
           </div>
           <div css={styles.tabContent} className={activeClass(4, 'active')}>
-            <h2>ini tab 4</h2>
+            <InvitationGalleries />
           </div>
         </div>
       </div>

@@ -38,3 +38,12 @@ export const dummyImg = {
 export const invitationPrint = (key: string, data: IInvitationData | null): any => (
   (data && (data as any)[key]) || (invitationDummy as any)[key]
 );
+
+export const allowedExtention = ['jpg', 'png', 'jpeg'];
+
+export const fileToBase64 = async (file: File): Promise<any> => new Promise((resolve, reject) => {
+  const reader = new FileReader();
+  reader.readAsDataURL(file);
+  reader.onload = () => resolve(reader.result);
+  reader.onerror = (e) => reject(e);
+});

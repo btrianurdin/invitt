@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import tw from 'twin.macro';
 import { weddingDateDummy } from '../../../constants/dummy-data';
 import useInvitation from '../../../hooks/useInvitation';
-import { invitationAtom, weddingDateAtom } from '../../../store';
+import { invitationAtom, weddingDateAtom, weddingGalleryAtom } from '../../../store';
 import GreenLove from '../../../templates/GreenLove';
 import PageLoading from '../../atoms/PageLoading';
 import InvitationEditForm from './InvitationEditForm';
@@ -15,11 +15,13 @@ export default function InvitationEdit(): JSX.Element {
   } = useInvitation();
   const [inv, setInv] = useAtom(invitationAtom);
   const [weddDate, setWeddDate] = useAtom(weddingDateAtom);
+  const [galleries, setGalleries] = useAtom(weddingGalleryAtom);
 
   useEffect(() => {
     setInv({...inv, ...invitation});
     setWeddDate(weddingDate);
-  }, [invitation, weddingDate]);
+    setGalleries(gallery);
+  }, [invitation, weddingDate, gallery]);
   
   return (
     <>

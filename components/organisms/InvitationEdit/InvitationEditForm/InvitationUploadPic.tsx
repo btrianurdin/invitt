@@ -5,15 +5,7 @@ import { toast } from 'react-toastify';
 import { invitationAtom } from '../../../../store';
 import InputFile from '../../../atoms/InputFile';
 import { removeInvitationPic, setInvitationPic } from '../../../../services/invitation';
-
-const allowedExtention = ['jpg', 'png', 'jpeg'];
-
-const fileToBase64 = async (file: any) => new Promise((resolve, reject) => {
-  const reader = new FileReader();
-  reader.readAsDataURL(file);
-  reader.onload = () => resolve(reader.result);
-  reader.onerror = (e) => reject(e);
-});
+import { allowedExtention, fileToBase64 } from '../../../../constants/commons';
 
 export default function InvitationUploadPic(): JSX.Element {
   const [inv, setInv] = useAtom(invitationAtom);
