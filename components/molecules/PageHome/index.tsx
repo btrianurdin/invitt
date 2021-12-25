@@ -31,6 +31,9 @@ export default function PageHome(): JSX.Element {
     return () => clearTimeout(tooltipTime);
   }, []);
 
+  const weddingDatePrint = weddingDate && weddingDate.length !== 0 ? weddingdateConvert(weddingDate[0]?.date) : '-';
+  const weddingPlacePrint = weddingDate && weddingDate.length !== 0 ? weddingDate[0]?.place_name : '-';
+
   return (
     <div css={tw`my-5 font-family['Poppins']`}>
       <div tw="flex justify-end py-3 relative">
@@ -58,12 +61,12 @@ export default function PageHome(): JSX.Element {
           <div tw="flex items-center my-4">
             <FiCalendar tw="text-2xl mr-2 width[20px]" />
             <p tw="flex-1">
-              {isLoading ? 'loading...' : weddingdateConvert(weddingDate?.[0].date)}
+              {isLoading ? 'loading...' : weddingDatePrint}
             </p>
           </div>
           <div tw="flex items-center my-4">
             <FiMapPin tw="text-2xl mr-2 width[20px]" />
-            <p tw="flex-1">{isLoading ? 'loading...' : weddingDate?.[0].place_name}</p>
+            <p tw="flex-1">{isLoading ? 'loading...' : weddingPlacePrint}</p>
           </div>
         </div>
         <p tw="text-center">Your invitation link:</p>
