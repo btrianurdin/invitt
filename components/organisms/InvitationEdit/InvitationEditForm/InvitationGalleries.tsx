@@ -16,15 +16,16 @@ export default function InvitationGalleries(): JSX.Element {
     setLoading(true);
     const file = e.target.files[0];
     const ext = e.target.files[0]?.name.split('.').pop();
-    if (!file) return;
-    if (!allowedExtention.includes(ext)) {
-      toast.error('Picture extention not valid');
-    } else {
-      const base64photo: string = await fileToBase64(file);
+    if (file) {
+      if (!allowedExtention.includes(ext)) {
+        toast.error('Picture extention not valid');
+      } else {
+        const base64photo: string = await fileToBase64(file);
 
-      const res: any = await setGallery(base64photo);
-      if (res?.error) toast.error('Failed to upload photo');
-      else setGalleries([...galleries!, res]);
+        const res: any = await setGallery(base64photo);
+        if (res?.error) toast.error('Failed to upload photo');
+        else setGalleries([...galleries!, res]);
+      }
     }
     setLoading(false);
   };
