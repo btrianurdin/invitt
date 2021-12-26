@@ -13,7 +13,11 @@ import LogoInvitt from '../../components/atoms/LogoInvitt';
 import { ITemplateProps } from '../../interfaces';
 import { invitationPrint } from '../../constants/commons';
 
-export default function GreenLove({ invitation, weddingDates }: ITemplateProps): JSX.Element {
+export default function GreenLove({
+  invitation,
+  weddingDates,
+  galleries,
+}: ITemplateProps): JSX.Element {
   return (
     <SimpleReactLightbox>
       {/* HERO */}
@@ -124,22 +128,21 @@ export default function GreenLove({ invitation, weddingDates }: ITemplateProps):
         }
 
         {/* Gallery */}
-        <div css={styles.galleryPage}>
-          <div tw="text-center py-10">
-            <TitleLine>Gallery</TitleLine>
-            <div css={styles.photoGallery}>
-              <Gallery images={[
-                '/assets/images/wedding-1.jpg',
-                '/assets/images/wedding-2.jpg',
-                '/assets/images/wedding-3.png',
-                '/assets/images/wedding-4.jpg',
-                '/assets/images/wedding-5.jpg',
-                '/assets/images/wedding-6.jpg',
-              ]}
-              />
+        {
+          galleries && galleries.length !== 0 && (
+            <div css={styles.galleryPage}>
+              <div tw="text-center py-10">
+                <TitleLine>Gallery</TitleLine>
+                <div css={styles.photoGallery}>
+                  <Gallery
+                    images={galleries
+                      && (galleries as any).map((gallery: { url: string; }) => gallery.url)}
+                  />
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+          )
+        }
 
         {/* Greeting */}
         <div css={styles.greeting}>

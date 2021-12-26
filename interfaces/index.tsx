@@ -85,6 +85,7 @@ export interface IUseInvitation {
 export interface ITemplateProps {
   invitation: IInvitationData | null;
   weddingDates: IWeddingDateData[] | null;
+  galleries: IGalleryData[] | null;
 }
 
 export interface IUploadPicture {

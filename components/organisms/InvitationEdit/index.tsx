@@ -35,6 +35,7 @@ export default function InvitationEdit(): JSX.Element {
               <GreenLove
                 invitation={inv}
                 weddingDates={weddDate}
+                galleries={galleries}
               />
             </>
           )
