@@ -27,19 +27,11 @@ export default function useInvitation(): IUseInvitation {
   }, []);
 
   useEffect(() => {
-    setTimeout(() => {
-      getInvitationData();
-      getWeddingDates();
-      Getgalleries();
-    }, 2000);
+    getInvitationData();
+    getWeddingDates();
+    Getgalleries();
   }, []);
   
-
-  // const { data: inv, error: invError } = useSWR(`/api${ROUTE_INVITATION_SHOW}`, fetcherAuthGet);
-  // const { data: wdate, error: wdateError } = useSWR(`/api${ROUTE_WEDDINGDATE_SHOW}`, fetcherAuthGet);
-
-  // const isLoading = (!inv && !invError) && (!wdate && !wdateError);
-
   return {
     isLoading: !invitation && !weddingDates && !galleries,
     invitation: invitation,
