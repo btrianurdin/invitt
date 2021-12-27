@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
-import { galleryDummy, weddingDateDummy } from '../constants/dummy-data';
 import { IGalleryData, IInvitationData, IUseInvitation, IWeddingDateData } from '../interfaces';
-import { getGallery, getInvitation } from '../services/invitation';
+import { getGallery } from '../services/gallery';
+import { getInvitation } from '../services/invitation';
 import { getWeddingDate } from '../services/wedding-dates';
 
 export default function useInvitation(): IUseInvitation {

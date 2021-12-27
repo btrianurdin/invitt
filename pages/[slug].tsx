@@ -1,11 +1,11 @@
 import { GetServerSideProps } from 'next';
 import React from 'react';
 import Head from 'next/head';
-import { IInvitationData, IWeddingDateData } from '../interfaces';
+import { IGalleryData, IInvitationData, IWeddingDateData } from '../interfaces';
 import { getInvitationPublic } from '../services/invitation';
 import TemplateComponents from '../templates';
-import { weddingDateDummy } from '../constants/dummy-data';
 import { getWeddingDatePublic } from '../services/wedding-dates';
+import { getGalleryPublic } from '../services/gallery';
 
 interface InvitationType extends IInvitationData {
   template: string;
@@ -14,14 +14,15 @@ interface InvitationType extends IInvitationData {
 interface InvitationMainProps {
   invitation: InvitationType;
   weddingDates: IWeddingDateData[];
+  galleries: IGalleryData[];
 }
 
 export default function InvitationMain({
   invitation,
   weddingDates,
+  galleries,
 }: InvitationMainProps): JSX.Element {
-  const props = { invitation, weddingDates };
-  console.log(weddingDates);
+  const props = { invitation, weddingDates, galleries };
 
   return (
     <>
@@ -44,11 +45,13 @@ export const getServerSideProps: GetServerSideProps = async (req) => {
   if (res?.status === 'error') return { notFound: true };
 
   const resWeddingDates = await getWeddingDatePublic(getSlug);
+  const resGalleries = await getGalleryPublic(getSlug);
 
   return {
     props: {
       invitation: res,
       weddingDates: resWeddingDates,
+      galleries: resGalleries,
     },
   };
 };
