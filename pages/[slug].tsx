@@ -2,9 +2,10 @@ import { GetServerSideProps } from 'next';
 import React from 'react';
 import Head from 'next/head';
 import { IInvitationData, IWeddingDateData } from '../interfaces';
-import { getInvitationPublic, getWeddingDatePublic } from '../services/invitation';
+import { getInvitationPublic } from '../services/invitation';
 import TemplateComponents from '../templates';
 import { weddingDateDummy } from '../constants/dummy-data';
+import { getWeddingDatePublic } from '../services/wedding-dates';
 
 interface InvitationType extends IInvitationData {
   template: string;
@@ -37,17 +38,17 @@ export const getServerSideProps: GetServerSideProps = async (req) => {
 
   if (!slug) return { notFound: true };
 
-  const res = await getInvitationPublic(Array.isArray(slug) ? slug[0] : slug);
+  const getSlug = Array.isArray(slug) ? slug[0] : slug;
+
+  const res = await getInvitationPublic(getSlug);
   if (res?.status === 'error') return { notFound: true };
 
-  let weddingDates: IWeddingDateData[] = [];
-  const resWeddingDates = await getWeddingDatePublic(slug[0]);
-  if (resWeddingDates.status === 'error') weddingDates = weddingDateDummy;
+  const resWeddingDates = await getWeddingDatePublic(getSlug);
 
   return {
     props: {
       invitation: res,
-      weddingDates,
+      weddingDates: resWeddingDates,
     },
   };
 };
