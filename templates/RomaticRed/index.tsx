@@ -2,7 +2,6 @@ import tw from 'twin.macro';
 import { Link } from 'react-scroll';
 import SimpleReactLightbox from 'simple-react-lightbox';
 import styles, { Button, TitleLine } from './styles';
-import Navbar from './components/Navbar';
 import { HeroShape, CountdownShape, IntroduceShape } from './components/shapes';
 import Countdown from './components/Countdown';
 import DateDetail from './components/DateDetail';
