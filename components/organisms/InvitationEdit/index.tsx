@@ -1,9 +1,10 @@
 import { useAtom } from 'jotai';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import tw from 'twin.macro';
 import { weddingDateDummy } from '../../../constants/dummy-data';
 import useInvitation from '../../../hooks/useInvitation';
 import { invitationAtom, weddingDateAtom, weddingGalleryAtom } from '../../../store';
+import TemplateComponents from '../../../templates';
 import GreenLove from '../../../templates/GreenLove';
 import PageLoading from '../../atoms/PageLoading';
 import InvitationEditForm from './InvitationEditForm';
@@ -32,11 +33,9 @@ export default function InvitationEdit(): JSX.Element {
           : (
             <>
               <InvitationEditForm />
-              <GreenLove
-                invitation={inv}
-                weddingDates={weddDate}
-                galleries={galleries}
-              />
+              {React.createElement(TemplateComponents[(invitation?.template as any)], {
+                invitation: inv, weddingDates: weddDate, galleries: galleries
+              })}
             </>
           )
       }
