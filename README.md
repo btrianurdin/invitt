@@ -1,34 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Invitation Website: Invitt Frontend
+Invitt is a simple invitation website for wedding event. Invitt offers easy and fast creation of an invitation website. Invitt provides templates that can be directly used by user.
 
-## Getting Started
+**Repository**:
+- Backend: [https://github.com/btrianurdin/invitt-backend/](https://github.com/btrianurdin/invitt-backend/)
+- Frontend: [https://github.com/btrianurdin/invitt/](https://github.com/btrianurdin/invitt/)
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Features**:
+- [x] Sign In and Sign Up
+- [x] Forgot Password
+- [x] Upload Profile Pictures
+- [x] Available 2 wedding invitation templates
+- [x] Choose template after sign up
+- [x] Custom invitation url slug (domain). Ex: https://invitt.vercel.app/**yourslug**
+- [x] Live edit invitation
+- [x] Wedding Dates & Wedding Galleries
+- [x] Edit account / profile
+- [x] Invitation accessible to the public
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+**Frontend Library and Framework**:
+- [x] Built with NextJS Typescript
+- [x] Notification with Toastify
+- [x] Form Validation with [Formik](https://formik.org/) and [yup](https://github.com/jquense/yup)
+- [x] State Management with [Jotai](https://jotai.org/)
+- [x] Tailwind CSS & [Twin Macro](https://github.com/ben-rogerson/twin.macro)
+- [x] HTTP Request with Axios
+- [x] SWR
+- [x] ESLint integration
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+**Backend Library and Framework**:
+- [x] Built with Express and NodeJS
+- [x] Full Typescipt
+- [x] Authentication with JWT (sign in and sign up)
+- [x] Database MongoDB
+- [x] Reset Password send via email with [nodemailer](https://nodemailer.com/)
+- [x] Upload image to Cloudinary
+- [x] Backend Validation with Express Validator
+- [x] Nodemon for development
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+*note:*
+- *Invitt may not be ready for production*
+- *Backend documentation will be published soon*
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+**Happy coding for you guys ❤️**
