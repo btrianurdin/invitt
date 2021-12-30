@@ -13,7 +13,7 @@ Invitt is a simple invitation website for wedding event. Invitt offers easy and 
 - [x] Upload Profile Pictures
 - [x] Available 2 wedding invitation templates
 - [x] Choose template after sign up
-- [x] Custom invitation url slug (domain). Ex: https://invitt.vercel.app/**yourslug**
+- [x] Custom invitation url slug (domain). Ex: https://invitt.vercel.app/yourslug
 - [x] Live edit invitation
 - [x] Wedding Dates & Wedding Galleries
 - [x] Edit account / profile
@@ -29,18 +29,14 @@ Invitt is a simple invitation website for wedding event. Invitt offers easy and 
 - [x] SWR
 - [x] ESLint integration
 
-**Backend Library and Framework**:
-- [x] Built with Express and NodeJS
-- [x] Full Typescipt
-- [x] Authentication with JWT (sign in and sign up)
-- [x] Database MongoDB
-- [x] Reset Password send via email with [nodemailer](https://nodemailer.com/)
-- [x] Upload image to Cloudinary
-- [x] Backend Validation with Express Validator
-- [x] Nodemon for development
+**Environment Variables**:
+| Name | Required | Description |
+| ---- | -------- | ----------- |
+| NEXT_PUBLIC_API | Yes | url of backend api|
+| NEXT_PUBLIC_BASE_URL | Yes | url of your web/app |
+| NEXT_PUBLIC_WEB | No | it's same with BASE_URL above |
 
 *note:*
 - *Invitt may not be ready for production*
-- *Backend documentation will be published soon*
 
 **Happy coding for you guys ❤️**
